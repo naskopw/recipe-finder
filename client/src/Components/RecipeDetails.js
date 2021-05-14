@@ -1,9 +1,9 @@
 import React from 'react'
-import { RecipeDetailsService } from "../Services/RecipeDetailsService"
+import { RecipeMockService } from "../Services/RecipeMockService"
 import { useLocation } from "react-router-dom"
 export const RecipeDetails = () => {
     const recipeId = parseInt(new URLSearchParams(useLocation().search).get('id'))
-    const recipe = RecipeDetailsService[recipeId]
+    const recipe = RecipeMockService[recipeId]
     const imgSize = "250px"
     return (
         <div>

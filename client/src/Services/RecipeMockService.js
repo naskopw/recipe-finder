@@ -1,6 +1,4 @@
-import React from 'react'
-
-export const RecipeDetailsService = [
+export const RecipeMockService = [
     {
         "title": "Sausage Hashbrown Breakfast Casserole",
         "desc": "Hash browns, sausage, eggs, and cheese. What's not to love? It can be made ahead of time and refrigerated until ready. Great to share at work, for an overnight guest, and Christmas morning! ",
