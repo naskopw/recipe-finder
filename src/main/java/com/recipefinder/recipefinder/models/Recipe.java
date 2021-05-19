@@ -1,85 +1,107 @@
 package com.recipefinder.recipefinder.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
+@Entity
 public class Recipe {
-    String title;
-    @JsonProperty("desc")
-    String description;
-    String time;
-    ArrayList<String> images;
-    int index;
-    Integer servings;
-    ArrayList<String> ingredients;
-    ArrayList<String> steps;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private String title;
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
+    private List<RecipeImage> recipeImages = new ArrayList<>();
+    @Lob
+    private String description;
+    private String time;
+    private int servings;
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
+    private List<Ingredient> ingredients = new ArrayList<>();
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
+    private List<InstructionStep> instructionSteps = new ArrayList<>();
 
-    public int getIndex() {
-        return index;
+    @ManyToMany(mappedBy = "recipeList")
+    private List<Category> categories;
+
+    public List<Ingredient> getIngredients() {
+        return ingredients;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
+    public List<InstructionStep> getInstructionSteps() {
+        return instructionSteps;
     }
 
-    public Integer getServings() {
-        return servings;
+    public long getId() {
+        return id;
     }
 
-    public void setServings(Integer servings) {
-        this.servings = servings;
+    public Recipe setId(long id) {
+        this.id = id;
+        return this;
     }
-
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    public Recipe setTitle(String title) {
         this.title = title;
+        return this;
+    }
+
+    public List<RecipeImage> getRecipeImages() {
+        return recipeImages;
+    }
+
+    public void setRecipeImages(List<RecipeImage> recipeImages) {
+        this.recipeImages = recipeImages;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public Recipe setDescription(String description) {
         this.description = description;
+        return this;
     }
 
     public String getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public Recipe setTime(String time) {
         this.time = time;
+        return this;
     }
 
-    public ArrayList<String> getImages() {
-        return images;
+    public int getServings() {
+        return servings;
     }
 
-    public void setImages(ArrayList<String> images) {
-        this.images = images;
+    public Recipe setServings(int servings) {
+        this.servings = servings;
+        return this;
     }
 
-    public ArrayList<String> getIngredients() {
-        return ingredients;
-    }
 
-    public void setIngredients(ArrayList<String> ingredients) {
+    public Recipe setIngredients(List<Ingredient> ingredients) {
         this.ingredients = ingredients;
+        return this;
     }
 
-    public ArrayList<String> getSteps() {
-        return steps;
+    public Recipe setInstructionSteps(List<InstructionStep> instructionSteps) {
+        this.instructionSteps = instructionSteps;
+        return this;
     }
 
-    public void setSteps(ArrayList<String> steps) {
-        this.steps = steps;
+    public List<Category> getCategories() {
+        return categories;
     }
 
-
+    public Recipe setCategories(List<Category> categories) {
+        this.categories = categories;
+        return this;
+    }
 }
