@@ -6,6 +6,7 @@ import com.recipefinder.recipefinder.models.Recipe;
 public class RecipeOverviewMapper {
     public static RecipeOverviewDto toRecipeOverviewDto(Recipe recipe) {
         var dto = new RecipeOverviewDto();
+        dto.setId(recipe.getId());
         dto.setTitle(recipe.getTitle());
         dto.setTime(recipe.getTime());
         dto.setServings(recipe.getServings());
