@@ -12,7 +12,7 @@ public class CategoryController {
     @Autowired
     CategoryService categoryService;
 
-    @RequestMapping("/api/category/{id}")
+    @RequestMapping("/api/categories/{id}")
     public CategoryDto categoryDetails(@PathVariable Long id) {
         return categoryService.getCategoryById(id);
     }
