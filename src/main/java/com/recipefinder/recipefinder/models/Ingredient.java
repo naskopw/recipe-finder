@@ -21,4 +21,13 @@ public class Ingredient {
         this.text = text;
         this.recipe = recipe;
     }
+
+    public String getText() {
+        return text;
+    }
+
+    public Ingredient setText(String text) {
+        this.text = text;
+        return this;
+    }
 }

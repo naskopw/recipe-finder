@@ -23,4 +23,13 @@ public class InstructionStep {
         this.text = text;
         this.recipe = recipe;
     }
+
+    public String getText() {
+        return text;
+    }
+
+    public InstructionStep setText(String text) {
+        this.text = text;
+        return this;
+    }
 }

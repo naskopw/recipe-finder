@@ -6,7 +6,7 @@ export async function getTrending() {
     return response.data
 }
 export async function getRecipe(id) {
-    const API_URL = `http://localhost:3000/api/details?id=${id}`
+    const API_URL = `http://localhost:3000/api/recipes/${id}`
     let response = await axios.get(API_URL)
     return response.data
 }
