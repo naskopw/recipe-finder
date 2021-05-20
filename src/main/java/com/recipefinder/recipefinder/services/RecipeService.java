@@ -1,15 +1,9 @@
 package com.recipefinder.recipefinder.services;
 
-import com.recipefinder.recipefinder.dto.mappers.CategoryMapper;
 import com.recipefinder.recipefinder.dto.mappers.RecipeDetailsMapper;
-import com.recipefinder.recipefinder.dto.mappers.RecipeOverviewMapper;
-import com.recipefinder.recipefinder.dto.models.CategoryDto;
 import com.recipefinder.recipefinder.dto.models.RecipeDetailsDto;
-import com.recipefinder.recipefinder.dto.models.RecipeOverviewDto;
-import com.recipefinder.recipefinder.dto.responses.CategoryNotFoundException;
-import com.recipefinder.recipefinder.models.Category;
+import com.recipefinder.recipefinder.dto.responses.RecipeNotFoundException;
 import com.recipefinder.recipefinder.models.Recipe;
-import com.recipefinder.recipefinder.repository.CategoryRepository;
 import com.recipefinder.recipefinder.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +20,7 @@ public class RecipeService {
         if (recipe.isPresent()) {
             return RecipeDetailsMapper.toRecipeDetailsDto(recipe.get());
         } else {
-            throw new CategoryNotFoundException();
+            throw new RecipeNotFoundException();
         }
     }
 }

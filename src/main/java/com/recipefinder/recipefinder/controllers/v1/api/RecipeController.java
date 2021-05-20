@@ -1,9 +1,6 @@
 package com.recipefinder.recipefinder.controllers.v1.api;
 
-import com.recipefinder.recipefinder.dto.models.CategoryDto;
 import com.recipefinder.recipefinder.dto.models.RecipeDetailsDto;
-import com.recipefinder.recipefinder.dto.models.RecipeOverviewDto;
-import com.recipefinder.recipefinder.services.CategoryService;
 import com.recipefinder.recipefinder.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

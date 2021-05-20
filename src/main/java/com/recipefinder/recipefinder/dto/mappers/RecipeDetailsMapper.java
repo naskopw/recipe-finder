@@ -1,7 +1,6 @@
 package com.recipefinder.recipefinder.dto.mappers;
 
 import com.recipefinder.recipefinder.dto.models.RecipeDetailsDto;
-import com.recipefinder.recipefinder.dto.models.RecipeOverviewDto;
 import com.recipefinder.recipefinder.models.Ingredient;
 import com.recipefinder.recipefinder.models.InstructionStep;
 import com.recipefinder.recipefinder.models.Recipe;

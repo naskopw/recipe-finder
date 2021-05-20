@@ -3,6 +3,6 @@ package com.recipefinder.recipefinder.dto.responses;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Category not found")
-public class CategoryNotFoundException extends RuntimeException {
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Recipe not found")
+public class RecipeNotFoundException extends RuntimeException {
 }
