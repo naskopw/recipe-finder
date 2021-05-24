@@ -1,9 +1,12 @@
 package com.recipefinder.recipefinder.dto.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class CategoryDto {
     private String name;
+    @JsonProperty("recipes")
     private List<RecipeOverviewDto> recipeOverviewDtoList;
     private long id;
 

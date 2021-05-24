@@ -17,7 +17,7 @@ export const Home = () => {
     return (
         <div>
             {trendingRecipes.map(recipe =>
-                <Link key={recipe.index} to={`/details?id=${recipe.index}`}><RecipeOverview recipe={recipe}></RecipeOverview></Link>)}
+                <Link key={recipe.id} to={`/recipes/?id=${recipe.id}`}><RecipeOverview recipe={recipe}></RecipeOverview></Link>)}
         </div>
     )
 }

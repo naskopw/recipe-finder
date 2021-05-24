@@ -35,6 +35,7 @@ public class RecipeOverviewDto {
     private String time;
     private int servings;
     private long id;
+    private String image;
 
     public long getId() {
         return id;
@@ -42,6 +43,15 @@ public class RecipeOverviewDto {
 
     public RecipeOverviewDto setId(long id) {
         this.id = id;
+        return this;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public RecipeOverviewDto setImage(String image) {
+        this.image = image;
         return this;
     }
 }
