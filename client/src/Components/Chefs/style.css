@@ -1,0 +1,50 @@
+#team {
+	color: #fff;
+	background: #444 url(../../assets/img/team-bg.jpg) center top no-repeat fixed;
+	background-size: cover;
+}
+#team .overlay {
+	padding: 120px 0 80px 0;
+	background: rgba(0, 0, 0, 0.6);
+}
+#team h2, #team p {
+	color: #fff;
+}
+#team hr {
+	background: #fff;
+}
+#team h3 {
+	color: #fff;
+	font-weight: 400;
+	font-size: 20px;
+	margin: 5px 0;
+}
+#team img {
+	width: 280px;
+}
+#team .thumbnail {
+	background: transparent;
+	border: 0;
+}
+#team .thumbnail .team-img {
+	display: inline-block;
+	position: relative;
+}
+#team .thumbnail .team-img:before {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	bottom: 8px;
+	left: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+#team .thumbnail .caption {
+	padding-top: 10px;
+}
+#team .thumbnail .caption p {
+	color: rgba(255,255,255,0.7);
+	padding: 0 10px;
+	font-size: 15px;
+}

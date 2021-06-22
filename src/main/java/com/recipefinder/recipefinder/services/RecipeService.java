@@ -17,7 +17,7 @@ public class RecipeService {
     @Autowired
     RecipeRepository recipeRepository;
 
-    private static final int TRENDING_SIZE = 10;
+    private static final int TRENDING_SIZE = 12;
 
     public RecipeDetailsDto getRecipeById(long id) {
         Optional<Recipe> recipe = recipeRepository.findById(id);

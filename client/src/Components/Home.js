@@ -1,23 +1,20 @@
 import { React, useEffect, useState } from 'react'
-import { Link } from "react-router-dom"
-import { RecipeOverview } from '../Components/RecipeOverview'
 
-import { getTrending } from "../Services/RecipeService"
+import { Header } from '../Components/Header/Header'
+import { Nav } from '../Components/Nav/Nav'
+import { Trending } from '../Components/Trending/Trending'
+import { About } from '../Components/About/About'
+import { Chefs } from '../Components/Chefs/Chefs'
+import { Footer } from '../Components/Footer/Footer'
 export const Home = () => {
-    const [trendingRecipes, setTrendingRecipes] = useState([])
-
-    useEffect(() => {
-        async function fetchData() {
-            let trending = await getTrending()
-            setTrendingRecipes(trending)
-        }
-        fetchData()
-    }, [])
-
     return (
         <div>
-            {trendingRecipes.map(recipe =>
-                <Link key={recipe.id} to={`/recipes/?id=${recipe.id}`}><RecipeOverview recipe={recipe}></RecipeOverview></Link>)}
+            <Nav></Nav>
+            <Header></Header>
+            <About></About>
+            <Trending></Trending>
+            <Chefs></Chefs>
+            <Footer></Footer>
         </div>
     )
 }
