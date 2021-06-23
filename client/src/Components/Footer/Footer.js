@@ -9,9 +9,9 @@ export const Footer = () => {
                 <div className="col-md-8 col-md-offset-2">
                     <div className="social">
                         <ul>
-                            <li><a href="#"><i className="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i className="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i className="fa fa-google-plus"></i></a></li>
+                            <li><Link to="#"><i className="fa fa-facebook"></i></Link></li>
+                            <li><Link to="#"><i className="fa fa-twitter"></i></Link></li>
+                            <li><Link to="#"><i className="fa fa-google-plus"></i></Link></li>
                         </ul>
                     </div>
                     <p className="copyrights">&copy; 2021 RecipeFinder. All rights reserved.</p>

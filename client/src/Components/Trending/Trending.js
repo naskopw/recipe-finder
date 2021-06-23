@@ -3,6 +3,7 @@ import { RecipeOverview } from '../RecipeOverview'
 import { React, useEffect, useState } from 'react'
 import { getTrending } from "../../Services/RecipeService"
 import './style.css'
+import axios from "axios"
 
 export const Trending = () => {
     const [trendingRecipes, setTrendingRecipes] = useState([])
@@ -31,17 +32,19 @@ export const Trending = () => {
                         <ul className="cat">
                             <li>
                                 <ol className="type">
-                                    <li><a href="#" data-filter="*" className="active">All</a></li>
-                                    <li><a href="#" data-filter=".breakfast">Today</a></li>
-                                    <li><a href="#" data-filter=".lunch">This week</a></li>
-                                    <li><a href="#" data-filter=".dinner">this mounth</a></li>
+                                    <li><Link to="#" data-filter="*" className="active">All</Link></li>
+                                    <li><Link to="#" data-filter=".breakfast">Today</Link></li>
+                                    <li><Link to="#" data-filter=".lunch">This week</Link></li>
+                                    <li><Link to="#" data-filter=".dinner">this mounth</Link></li>
                                 </ol>
                             </li>
                         </ul>
                         <div className="clearfix"></div>
                         <div className="row">
                             {trendingRecipes.map(recipe =>
-                                <Link key={recipe.id} to={`/recipes/?id=${recipe.id}`}><RecipeOverview recipe={recipe}></RecipeOverview></Link>)}
+                                <Link key={recipe.id} to={`/recipes/?id=${recipe.id}`}>
+                                    <RecipeOverview recipe={recipe}></RecipeOverview>
+                                </Link>)}
                         </div>
                     </div>
                 </div>

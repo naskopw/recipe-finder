@@ -1,9 +1,18 @@
-import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
+import { Link } from "react-router-dom"
+import { React, useEffect, useState } from 'react'
 import './style.css'
 
-export const Nav = () => {
+export const Nav = (props) => {
+    const [staticNav, setStaticNav] = useState(false)
+    const setNavClasses = () => { return staticNav ? "navbar navbar-default navbar-fixed-top on" : "navbar navbar-default navbar-fixed-top" }
+    useEffect(() => {
+        if (props.isStatic)
+            setStaticNav(true)
+    }, [props.isStatic])
+
     return (
-        <nav id="menu" className="navbar navbar-default navbar-fixed-top">
+        <nav id="menu" className={setNavClasses()}>
             <div className="container">
                 <div className="navbar-header">
                     <button type="button" className="navbar-toggle collapsed" data-toggle="collapse"
@@ -13,11 +22,11 @@ export const Nav = () => {
                 </div>
                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul className="nav navbar-nav navbar-right">
-                        <li><Link to='/#about'>About</Link></li>
-                        <li><Link to='/#trending'>Trending</Link></li>
-                        <li><Link to='/#search'>Search</Link></li>
-                        <li><Link to='/#team'>Chefs</Link></li>
-                        <li><Link to='/'>Register</Link></li>
+                        <li><HashLink to='/#about'>About</HashLink></li>
+                        <li><HashLink to='/#trending'>Trending</HashLink></li>
+                        <li><HashLink to='/#search'>Search</HashLink></li>
+                        <li><HashLink to='/#team'>Chefs</HashLink></li>
+                        <li><Link to='/register'>Register</Link></li>
                     </ul>
                 </div>
             </div>
