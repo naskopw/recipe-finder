@@ -2,6 +2,9 @@ package com.recipefinder.recipefinder.bootstrap;
 
 import com.recipefinder.recipefinder.models.*;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 public class ParsedRecipeMapper {
@@ -24,7 +27,15 @@ public class ParsedRecipeMapper {
 
         recipe.setCategories(parsedRecipe.getProductNames()
                 .stream()
-                .map(productName -> new Category(productName, null))
+                .map(productName -> {
+                    try {
+                        return new Category(productName.strip(),
+                                URLEncoder.encode(Category.BASE_CATEGORY_PATH.resolve(productName.strip().toLowerCase(Locale.ROOT) + ".png")
+                                        .toString(), "UTF-8"));
+                    } catch (UnsupportedEncodingException e) {
+                        return new Category(productName, null);
+                    }
+                })
                 .collect(Collectors.toList()));
         return recipe;
     }

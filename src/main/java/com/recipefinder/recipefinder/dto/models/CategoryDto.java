@@ -9,6 +9,7 @@ public class CategoryDto {
     @JsonProperty("recipes")
     private List<RecipeOverviewDto> recipeOverviewDtoList;
     private long id;
+    private String image;
 
     public String getName() {
         return name;
@@ -38,5 +39,13 @@ public class CategoryDto {
     public CategoryDto setRecipeOverviewDtoList(List<RecipeOverviewDto> recipeOverviewDtoList) {
         this.recipeOverviewDtoList = recipeOverviewDtoList;
         return this;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 import { useLocation } from "react-router-dom"
 import { RecipeOverview } from "./RecipeOverview"
 import { getCategory } from "../Services/RecipeService"
-export const CategoryDetails = () => {
-    const categoryId = parseInt(new URLSearchParams(useLocation().search).get('id'))
+export const CategoryDetails = ({match}) => {
+    const categoryId = parseInt(match.params.id)
     const [category, setCategory] = useState()
 
     useEffect(() => {

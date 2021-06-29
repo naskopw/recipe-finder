@@ -24,7 +24,7 @@ export const Nav = (props) => {
                     <ul className="nav navbar-nav navbar-right">
                         <li><HashLink to='/#about'>About</HashLink></li>
                         <li><HashLink to='/#trending'>Trending</HashLink></li>
-                        <li><HashLink to='/#search'>Search</HashLink></li>
+                        <li><Link to='/categories?startsWith=A'>Search</Link></li>
                         <li><HashLink to='/#team'>Chefs</HashLink></li>
                         <li><Link to='/register'>Register</Link></li>
                     </ul>

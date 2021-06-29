@@ -37,9 +37,8 @@ public class DBSeedService {
 
     public void populateDB() {
         loadRecipesFromJson();
-        var allRecipes = new ArrayList<Recipe>();
+        var allRecipes = new HashSet<Recipe>();
         var allCategories = new HashSet<Category>();
-        allRecipes.ensureCapacity(parsedRecipes.length);
         for (ParsedRecipe parsedRecipe : parsedRecipes) {
             var recipe = createRecipe(parsedRecipe);
             allRecipes.add(recipe);
@@ -53,7 +52,7 @@ public class DBSeedService {
         return ParsedRecipeMapper.toRecipe(parsedRecipe);
     }
 
-    private HashSet<Category> mapCategoriesToRecipes(ArrayList<Recipe> allRecipes, HashSet<Category> allCategories) {
+    private HashSet<Category> mapCategoriesToRecipes(HashSet<Recipe> allRecipes, HashSet<Category> allCategories) {
         for (var category : allCategories) {
             var recipes = allRecipes.stream().filter(recipe ->
                     recipe.getCategories()

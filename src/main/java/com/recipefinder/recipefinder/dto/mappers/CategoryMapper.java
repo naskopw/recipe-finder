@@ -10,6 +10,7 @@ public class CategoryMapper {
         var dto = new CategoryDto();
         dto.setName(category.getName());
         dto.setId(category.getId());
+        dto.setImage(category.getImage());
         dto.setRecipeOverviewDtoList(category.getRecipeList()
                 .stream()
                 .map(RecipeOverviewMapper::toRecipeOverviewDto).collect(Collectors.toList()));

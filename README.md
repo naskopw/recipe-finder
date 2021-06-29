@@ -9,3 +9,4 @@ Recipes Finder is a cooking platform, which allows you to find the right recipes
 ![image info](./screenshots/4.jpg)
 ![image info](./screenshots/5.jpg)
 ![image info](./screenshots/6.jpg)
+![image info](./screenshots/7.jpg)
