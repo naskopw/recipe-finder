@@ -48,9 +48,9 @@ export const Search = () => {
                             {categories &&
                                 <div>
                                     {categories.map(category =>
-                                    <Link key={category.id} to={`/categories/${category.id}`}>
-                                    <CategoryOverview category={category}></CategoryOverview>
-                                    </Link>
+                                        <Link key={category.id} to={`/categories/${category.id}`}>
+                                            <CategoryOverview category={category}></CategoryOverview>
+                                        </Link>
                                     )}
                                 </div>
                             }

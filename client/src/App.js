@@ -1,16 +1,18 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { CategoryDetails } from './Components/CategoryDetails';
+import { CategoryDetails } from './Components/CategoryDetails/CategoryDetails';
 import { Search } from './Components/Search/Search';
 import {Home} from "./Components/Home"
 import {Register} from "./Components/Register/Register"
-import { RecipeDetails } from './Components/RecipeDetails';
+import { RecipeDetails } from './Components/RecipeDetails/RecipeDetails';
+
+import { ToastProvider, useToasts } from 'react-toast-notifications'
 function App() {
   return (
     <Router>
       <div className="App">
         <Switch>
         <Route path="/recipes">
-            <RecipeDetails></RecipeDetails>
+          <ToastProvider><RecipeDetails></RecipeDetails></ToastProvider>
           </Route>
           <Route path="/categories/:id" component={CategoryDetails}></Route>
           <Route path="/categories" component={Search}></Route>
