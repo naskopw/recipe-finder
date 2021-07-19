@@ -6,7 +6,7 @@ import { Nav } from '../Nav/Nav'
 import './style.css'
 import { getCategoryByStart } from "../../Services/RecipeService"
 export const Search = () => {
-    const startsWith = new URLSearchParams(useLocation().search).get('startsWith')
+    const [startsWith, setStartsWith] = useState('A')
     const [categories, setCategories] = useState([])
     const [activeFilter, setActiveFilter] = useState('a')
     useEffect(() => {
@@ -28,7 +28,14 @@ export const Search = () => {
                 </div>
             </div>
             <div className="container">
-                <div className="row">
+                <div className="row align-items-center">
+                    <input type="search"
+                        className="form-control"
+                        id="searchKeywordForm"
+                        onChange={(e) => {
+                            setStartsWith(e.target.value)
+                        }}
+                        placeholder="Search by keyword" />
                     <div className="categories">
                         <ul className="cat">
                             <li>
@@ -37,7 +44,8 @@ export const Search = () => {
                                         "abcdefghijklmnopqrstuvwxyz".split("").map(letter =>
                                             <li key={letter}><Link
                                                 className={activeFilter === letter ? 'active' : ''}
-                                                onClick={() => { setActiveFilter(letter) }}
+                                                onClick={() => { setActiveFilter(letter)
+                                                setStartsWith(letter) }}
                                                 to={`/categories?startsWith=${letter.toUpperCase()}`}>{letter.toUpperCase()}</Link></li>)
                                     }
                                 </ol>
