@@ -26,6 +26,7 @@ public class RecipeFinderApplication {
     @EventListener
     void seedDatabase(ContextRefreshedEvent event) {
         if (recipeRepository.count() == 0) {
+            logger.info("Seeding database!");
             dbSeedService.populateDB();
             logger.info("Database seeded!");
         }
