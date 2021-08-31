@@ -1,24 +1,23 @@
-package com.recipefinder.recipefinder.controllers.v1.api;
+package com.recipefinder.recipefinder.controllers.api.v1;
 
 import com.recipefinder.recipefinder.dto.models.CategoryDto;
 import com.recipefinder.recipefinder.services.CategoryService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/api/v1")
+@RequiredArgsConstructor
 public class CategoryController {
-    @Autowired
-    CategoryService categoryService;
+    private final CategoryService categoryService;
 
-    @RequestMapping("/api/categories")
+    @GetMapping("/categories")
     public Iterable<CategoryDto> categories(@RequestParam String startsWith) {
         return categoryService.getCategoryByNameStart(startsWith);
     }
 
-    @RequestMapping("/api/categories/{id}")
+    @GetMapping("/categories/{id}")
     public CategoryDto categoryDetails(@PathVariable Long id) {
         return categoryService.getCategoryById(id);
     }

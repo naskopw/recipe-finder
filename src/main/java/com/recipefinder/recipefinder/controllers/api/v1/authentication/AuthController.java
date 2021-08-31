@@ -1,4 +1,4 @@
-package com.recipefinder.recipefinder.controllers.v1.api.authentication;
+package com.recipefinder.recipefinder.controllers.api.v1.authentication;
 
 import java.util.HashSet;
 import java.util.List;
