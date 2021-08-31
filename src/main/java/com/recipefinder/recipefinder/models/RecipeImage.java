@@ -1,28 +1,21 @@
 package com.recipefinder.recipefinder.models;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
+@NoArgsConstructor
+@Getter
 public class RecipeImage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    public RecipeImage() {
-    }
-
-    public Recipe getRecipe() {
-        return recipe;
-    }
+    private Long id;
 
     @ManyToOne
     private Recipe recipe;
-
-    public String getSrc() {
-        return src;
-    }
-
-    String src;
+    private String src;
 
     public RecipeImage(String src, Recipe recipe) {
         this.recipe = recipe;

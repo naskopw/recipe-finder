@@ -1,9 +1,11 @@
-package com.recipefinder.recipefinder.controllers.v1.api;
+package com.recipefinder.recipefinder.controllers.api.v1;
 
 import com.recipefinder.recipefinder.dto.models.RecipeDetailsDto;
 import com.recipefinder.recipefinder.dto.models.RecipeOverviewDto;
 import com.recipefinder.recipefinder.services.RecipeService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,16 +13,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
+@RequestMapping("/api/v1")
 public class RecipeController {
-    @Autowired
-    RecipeService recipeService;
+    private final RecipeService recipeService;
 
-    @RequestMapping("/api/recipes/{id}")
-    public RecipeDetailsDto recipeDetails(@PathVariable Long id) {
-        return recipeService.getRecipeById(id);
+    @GetMapping("/recipes/{id}")
+    public ResponseEntity<RecipeDetailsDto> recipeDetails(@PathVariable Long id) {
+        return ResponseEntity.ok().body(recipeService.getRecipeById(id));
     }
 
-    @RequestMapping("/api/recipes/trending")
+    @GetMapping("/recipes/trending")
     public List<RecipeOverviewDto> trendingRecipes() {
         return recipeService.trending();
     }

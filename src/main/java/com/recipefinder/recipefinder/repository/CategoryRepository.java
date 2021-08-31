@@ -3,7 +3,7 @@ package com.recipefinder.recipefinder.repository;
 import com.recipefinder.recipefinder.models.Category;
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.List;
+
 import java.util.Set;
 
 public interface CategoryRepository extends CrudRepository<Category, Long> {

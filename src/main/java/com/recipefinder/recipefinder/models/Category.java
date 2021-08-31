@@ -19,7 +19,7 @@ public class Category {
     @JoinTable(name = "recipe_categories",
             joinColumns = @JoinColumn(name = "category_id"),
             inverseJoinColumns = @JoinColumn(name = "recipe_id"))
-    private List<Recipe> recipeList = new ArrayList<>();
+    private final List<Recipe> recipeList = new ArrayList<>();
 
     public Category(String name, String image) {
         this.name = name;
