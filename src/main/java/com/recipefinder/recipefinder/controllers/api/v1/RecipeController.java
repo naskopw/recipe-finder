@@ -11,16 +11,16 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/recipes")
 public class RecipeController {
     private final RecipeService recipeService;
 
-    @GetMapping("/recipes/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<RecipeDetailsDto> recipeDetails(@PathVariable Long id) {
         return ResponseEntity.ok().body(recipeService.getRecipeById(id));
     }
 
-    @GetMapping("/recipes/trending")
+    @GetMapping("/trending")
     public List<RecipeOverviewDto> trendingRecipes() {
         return recipeService.trending();
     }
