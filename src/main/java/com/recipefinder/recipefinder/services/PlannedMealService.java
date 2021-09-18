@@ -48,6 +48,12 @@ public class PlannedMealService {
         return result;
     }
 
+    public void deleteMeal(Long id, Long userId) {
+        var meal = plannedMealRepository.findById(id).orElseThrow();
+        if (meal.getUser().getId().equals(userId))
+            plannedMealRepository.deleteById(id);
+    }
+
     public List<PlannedRecipeDto> getForDate(Date date) {
         List<PlannedRecipeDto> result = new ArrayList<>();
         plannedMealRepository.findAllByPlannedFor(date).forEach(r ->
