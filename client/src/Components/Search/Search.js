@@ -1,10 +1,9 @@
 import { React, useEffect, useState } from 'react'
 import { Link } from "react-router-dom"
-import { useLocation } from "react-router-dom"
 import { CategoryOverview } from '../CategoryOverview'
 import { Nav } from '../Nav/Nav'
 import './style.css'
-import { getCategoryByStart } from "../../Services/RecipeService"
+import { getCategoryByStart } from "../../Services/CategoryService"
 export const Search = () => {
     const [startsWith, setStartsWith] = useState('A')
     const [categories, setCategories] = useState([])

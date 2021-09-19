@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react'
 import { Link } from "react-router-dom"
 import { RecipeOverview } from "../RecipeOverview"
-import { getCategory } from "../../Services/RecipeService"
+import { getCategory } from "../../Services/CategoryService"
 import { Nav } from '../Nav/Nav'
 
 export const CategoryDetails = ({ match }) => {

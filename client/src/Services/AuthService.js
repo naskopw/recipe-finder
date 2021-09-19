@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/auth/";
+const API_URL = "http://localhost:3000/api/v1/auth/";
 
 class AuthService {
   async login(username, password) {
@@ -29,6 +29,9 @@ class AuthService {
 
   getCurrentUser() {
     return JSON.parse(localStorage.getItem('user'));;
+  }
+  isLoggedIn(){
+    return this.getCurrentUser() !== null
   }
 }
 

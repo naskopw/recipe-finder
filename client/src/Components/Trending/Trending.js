@@ -3,7 +3,6 @@ import { RecipeOverview } from '../RecipeOverview'
 import { React, useEffect, useState } from 'react'
 import { getTrending } from "../../Services/RecipeService"
 import './style.css'
-import axios from "axios"
 
 export const Trending = () => {
     const [trendingRecipes, setTrendingRecipes] = useState([])
