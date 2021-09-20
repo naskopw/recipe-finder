@@ -1,0 +1,36 @@
+#section-chefs {
+    background: #444 url("../../../assets/img/team-bg.jpg") center top no-repeat fixed;
+    background-size: cover;
+    box-shadow: inset 0 0 0 100vh rgba(0, 0, 0, 0.4);
+    padding: 120px 0 80px 0;
+}
+
+#section-chefs h2, #section-chefs p {
+    color: #fff;
+}
+
+#section-chefs hr {
+    background: #fff;
+    margin: auto;
+}
+
+#section-chefs h3 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+#section-chefs img {
+    width: 280px;
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+    outline-offset: -8px;
+}
+
+#section-chefs .section-title {
+    margin-bottom: 3rem;
+}
+
+#section-chefs .caption {
+    margin-top: 10px;
+}
