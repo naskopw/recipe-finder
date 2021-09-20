@@ -6,20 +6,21 @@ import Register from "./Components/Authentication/RegisterComponent";
 import Profile from "./Components/Authentication/ProfileComponent";
 import Login from "./Components/Authentication/LoginComponent";
 import {CategoryDetails} from "./Components/CategoryDetails/CategoryDetails";
+import PrivateRoute from './Components/PrivateRoute';
+import ShoppingList from "./Components/Tools/Shopping/ShoppingList";
 
-// import PrivateRoute from './Components/PrivateRoute';
 function App() {
     return (
         <Router>
             <div className="App">
                 <Switch>
                     <Route path="/recipes"><RecipeDetails/></Route>
-                    <Route path="/categories/:id" component={CategoryDetails}></Route>
+                    <Route path="/categories/:id" component={CategoryDetails}/>
                     <Route path="/categories" component={Search}/>
                     <Route path="/register" component={Register}/>
                     <Route path="/profile" component={Profile}/>
                     <Route path="/login" component={Login}/>
-                    {/*/!* <PrivateRoute path="/tools/shopping" component={ShoppingList}></PrivateRoute> *!/*/}
+                    <PrivateRoute path="/tools/shopping" component={ShoppingList}/>
                     <Route path="/">
                         <Home/>
                     </Route>
