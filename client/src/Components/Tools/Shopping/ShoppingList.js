@@ -83,12 +83,15 @@ const ShoppingList = () => {
                         <div className="shopping-item"
                              key={item["id"]}>
                             <div className="row">
-                                <div className="col-lg-5">
+                                <div className="col-lg-3">
                                     <h3
                                         className="unselectable"
                                         onClick={() => crossItem(index + 1)}
                                     >{trimTitle(item["title"])}</h3>
                                 </div>
+                                <div className="col-lg-3">
+                                <p>{item["desc"]}</p>
+                            </div>
                                 <div className="col-lg-3">
                                     <p>{item["quantity"]}</p>
                                 </div>
