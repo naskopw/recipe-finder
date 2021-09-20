@@ -5,8 +5,17 @@
     width: 80%
 }
 
-.page-shopping-list .input-form > input {
+.page-shopping-list .input-form input {
     margin: 10px;
+}
+
+.page-shopping-edit .input-form {
+    padding: 50px;
+}
+
+.page-shopping-edit .input-form p {
+    color: #777;
+    font-weight: 400;
 }
 
 #section-shopping-list .shopping-item:hover {
@@ -18,11 +27,13 @@
     text-decoration: line-through;
 }
 
-.page-shopping-list {
+.page-shopping-list,
+.page-shopping-edit {
     text-align: center;
 }
 
-.page-shopping-list h1 {
+.page-shopping-list h1,
+.page-shopping-edit h1 {
     margin-top: 20px;
 }
 
@@ -36,4 +47,13 @@
 
 #section-shopping-list {
     padding-bottom: 3rem;
+}
+
+#section-shopping-list a {
+    color: #777;
+    cursor: auto;
+}
+
+.page-shopping-edit .input-form input {
+    margin: 0.1rem;
 }

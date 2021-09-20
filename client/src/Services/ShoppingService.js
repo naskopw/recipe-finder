@@ -16,12 +16,12 @@ export async function deleteItem(itemId) {
     return response.data
 }
 
-export async function createItem(title) {
+export async function createItem(title, desc = "", quantity = 1) {
     const API_URL = `${API_BASE_URL}/grocery/`
     let response = await axios.post(API_URL, {
         title: title,
-        desc: "",
-        quantity: 1
+        desc: desc,
+        quantity: quantity
     }, {
         headers: authHeader()
     })

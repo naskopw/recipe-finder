@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Nav from "../../NavLogged/Nav";
 import {createItem, deleteItem, getAll} from "../../../Services/ShoppingService";
 import "./style.css"
+import {Link} from "react-router-dom";
 
 const ShoppingList = () => {
     const [items, setItems] = useState([])
@@ -92,7 +93,10 @@ const ShoppingList = () => {
                                     <p>{item["quantity"]}</p>
                                 </div>
                                 <div className="col-lg-3">
-                                    <i className="fas fa-edit"/>
+                                    <Link
+                                        to={"/tools/shopping/edit/" + item["id"]}>
+                                        <i className="fas fa-edit"/>
+                                    </Link>
                                     <i className="fas fa-trash-alt"
                                        onClick={() => deleteItemCallback(item["id"])}
                                     />
