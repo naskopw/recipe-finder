@@ -1,0 +1,26 @@
+header {
+    background-color: rgb(38, 38, 38);
+}
+
+.navbar-nav > li > a {
+    text-transform: uppercase;
+    color: #ddd !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 5px 0;
+    letter-spacing: 0.5px;
+    margin: 10px 15px 0 15px;
+}
+
+.navbar-nav > li > a:hover {
+    color: #f3a281 !important;
+}
+
+.navbar > a {
+    text-transform: initial;
+    font-family: "Dancing Script", cursive;
+    font-size: 1.8rem;
+    color: #f3a281 !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
