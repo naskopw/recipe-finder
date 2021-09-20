@@ -1,6 +1,7 @@
 import {React} from 'react'
 import {Link} from 'react-router-dom'
 import "./style.css"
+import {HashLink} from "react-router-hash-link";
 
 const Nav = () => {
     return (
@@ -20,10 +21,10 @@ const Nav = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="toggleMobileMenu">
                     <ul className="navbar-nav text-center ms-auto">
-                        <li><Link to="#" className="nav-link">About</Link></li>
+                        <li><HashLink to="#section-about" className="nav-link">About</HashLink></li>
                         <li><Link to="#" className="nav-link">Trending</Link></li>
                         <li><Link to="#" className="nav-link">Search</Link></li>
-                        <li><Link to="#" className="nav-link">Chefs</Link></li>
+                        <li><HashLink to="#section-chefs" className="nav-link">Chefs</HashLink></li>
                         <li><Link to="#" className="nav-link">Register</Link></li>
                     </ul>
                 </div>

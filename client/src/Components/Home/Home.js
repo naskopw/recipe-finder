@@ -1,5 +1,4 @@
 import {React} from 'react'
-import "./style.css"
 
 import Nav from '../NavMain/Nav'
 import Discover from "./Discover/Discover";
