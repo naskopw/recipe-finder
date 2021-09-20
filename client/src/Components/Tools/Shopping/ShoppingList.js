@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Nav from "../../NavLogged/Nav";
-import {getAll} from "../../../Services/ShoppingService";
+import {createItem, deleteItem, getAll} from "../../../Services/ShoppingService";
 import "./style.css"
 
 const ShoppingList = () => {
@@ -19,15 +19,20 @@ const ShoppingList = () => {
 
 
     useEffect(() => {
-        for (let i = 0; i < crossed.length; i++) {
+        for (let i = 1; i <= items.length; i++) {
             const title = document.querySelector(
-                `#section-shopping-list > div:nth-child(${crossed[i]}) > div > div:nth-child(1) > h3`)
-            title.classList.add("crossed")
+                `#section-shopping-list > div:nth-child(${i}) > div > div:nth-child(1) > h3`)
+            if (crossed.includes(i)) {
+                title.classList.add("crossed")
+            } else {
+                title.classList.remove("crossed")
+            }
         }
     }, [crossed])
 
 
-    const deleteItem = (itemId) => {
+    const deleteItemCallback = async (itemId) => {
+        await deleteItem(itemId)
         setItems(items.filter((i) => i["id"] !== itemId))
     }
     const trimTitle = (title) => {
@@ -41,36 +46,55 @@ const ShoppingList = () => {
 
     const crossItem = (itemId) => {
         if (crossed.includes(itemId)) {
-            //already crossed
-            setCrossed(crossed.filter(i => i["id"] !== itemId))
+            setCrossed(crossed.filter(i => i !== itemId))
         } else {
-            crossed.push(itemId)
-            setCrossed(crossed)
+            let newCrossed = [...crossed]
+            newCrossed.push(itemId)
+            setCrossed(newCrossed)
         }
 
     }
 
+    async function addItem(text) {
+        await createItem(text)
+        setItems(await getAll())
+
+    }
+
     return (
-        <div>
+        <div className="page-shopping-list">
             <Nav/>
-            <section id="section-shopping-list" className="container text-center">
+            <h1>What are you going to buy?</h1>
+            <div className="input-form">
+                <input type="text"
+                       placeholder="...food"/>
+                <button className="btn"
+                        onClick={() => {
+                            const input = document.querySelector("#root > div > div > div > input[type=text]")
+                            addItem(input.value)
+                            input.value = ""
+                        }}>Create
+                </button>
+            </div>
+            <section id="section-shopping-list">
                 {
-                    items.map((item) =>
+                    items.map((item, index) =>
                         <div className="shopping-item"
                              key={item["id"]}>
                             <div className="row">
-                                <div className="col-lg-3">
-                                    <h3>{trimTitle(item["title"])}</h3>
+                                <div className="col-lg-5">
+                                    <h3
+                                        className="unselectable"
+                                        onClick={() => crossItem(index + 1)}
+                                    >{trimTitle(item["title"])}</h3>
                                 </div>
                                 <div className="col-lg-3">
                                     <p>{item["quantity"]}</p>
                                 </div>
                                 <div className="col-lg-3">
-                                    <i className="fas fa-edit"
-                                       onClick={() => crossItem(item["id"])}
-                                    />
+                                    <i className="fas fa-edit"/>
                                     <i className="fas fa-trash-alt"
-                                       onClick={() => deleteItem(item["id"])}
+                                       onClick={() => deleteItemCallback(item["id"])}
                                     />
                                 </div>
                             </div>

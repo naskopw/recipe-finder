@@ -1,8 +1,12 @@
 #section-shopping-list .shopping-item {
     border-radius: 10px;
-    border: 3px solid #777;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 30px auto 10px auto;
-    width: 30%
+    width: 80%
+}
+
+.page-shopping-list .input-form > input {
+    margin: 10px;
 }
 
 #section-shopping-list .shopping-item:hover {
@@ -10,11 +14,26 @@
     transition: background-color 1s;
 }
 
-#section-shopping-list .shopping-item .row {
-    text-overflow: ellipsis;
-    margin: auto;
+.crossed {
+    text-decoration: line-through;
 }
 
-.crossed {
-    text-decoration: dashed;
+.page-shopping-list {
+    text-align: center;
+}
+
+.page-shopping-list h1 {
+    margin-top: 20px;
+}
+
+.unselectable {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#section-shopping-list {
+    padding-bottom: 3rem;
 }
