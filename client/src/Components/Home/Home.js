@@ -5,6 +5,7 @@ import Nav from '../NavMain/Nav'
 import Discover from "./Discover/Discover";
 import About from "./About/About";
 import Footer from "./Footer/Footer";
+import Chefs from "./Chefs/Chefs";
 
 export const Home = () => {
     return (
@@ -13,7 +14,7 @@ export const Home = () => {
             <Discover/>
             <About/>
             {/*<Trending></Trending>*/}
-            {/*<Chefs></Chefs>*/}
+            <Chefs/>
             <Footer/>
         </div>
     )
