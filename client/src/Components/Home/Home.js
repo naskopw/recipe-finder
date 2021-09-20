@@ -4,9 +4,8 @@ import "./style.css"
 import Nav from '../NavMain/Nav'
 import Discover from "./Discover/Discover";
 import About from "./About/About";
-// import { Trending } from '../Components/Trending/Trending'
-// import { Chefs } from '../Components/Chefs/Chefs'
-// import { Footer } from '../Components/Footer/Footer'
+import Footer from "./Footer/Footer";
+
 export const Home = () => {
     return (
         <div>
@@ -15,7 +14,7 @@ export const Home = () => {
             <About/>
             {/*<Trending></Trending>*/}
             {/*<Chefs></Chefs>*/}
-            {/*<Footer></Footer>*/}
+            <Footer/>
         </div>
     )
 }
