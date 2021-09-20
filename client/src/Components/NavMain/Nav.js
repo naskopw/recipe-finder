@@ -21,9 +21,9 @@ const Nav = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="toggleMobileMenu">
                     <ul className="navbar-nav text-center ms-auto">
-                        <li><HashLink to="#section-about" className="nav-link">About</HashLink></li>
+                        <li><HashLink to="/#section-about" className="nav-link">About</HashLink></li>
                         <li><Link to="#" className="nav-link">Trending</Link></li>
-                        <li><Link to="#" className="nav-link">Search</Link></li>
+                        <li><Link to="/categories" className="nav-link">Search</Link></li>
                         <li><HashLink to="#section-chefs" className="nav-link">Chefs</HashLink></li>
                         <li><Link to="#" className="nav-link">Register</Link></li>
                     </ul>
