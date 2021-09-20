@@ -1,10 +1,10 @@
-import { React } from 'react'
+import {React} from 'react'
 import "./style.css"
 
-import Nav  from '../NavMain/Nav'
+import Nav from '../NavMain/Nav'
 import Discover from "./Discover/Discover";
+import About from "./About/About";
 // import { Trending } from '../Components/Trending/Trending'
-// import { About } from '../Components/About/About'
 // import { Chefs } from '../Components/Chefs/Chefs'
 // import { Footer } from '../Components/Footer/Footer'
 export const Home = () => {
@@ -12,7 +12,7 @@ export const Home = () => {
         <div>
             <Nav/>
             <Discover/>
-            {/*<About></About>*/}
+            <About/>
             {/*<Trending></Trending>*/}
             {/*<Chefs></Chefs>*/}
             {/*<Footer></Footer>*/}

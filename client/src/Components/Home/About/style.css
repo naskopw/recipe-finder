@@ -1,0 +1,17 @@
+#section-about {
+    padding: 60px 40px;
+    background-color: #fff;
+}
+#section-about h3 {
+    font-size: 20px;
+}
+
+#section-about p {
+    line-height: 24px;
+    margin: 15px 0 30px;
+}
+
+#section-about img {
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+    outline-offset: -8px;
+}
