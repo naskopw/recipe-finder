@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Redirect} from "react-router-dom";
 import AuthService from "../../Services/AuthService";
-import Nav from "../NavMain/Nav"
+import Nav from "../NavLogged/Nav"
 import "./style.css"
 
 export default class Profile extends Component {
@@ -47,7 +47,7 @@ export default class Profile extends Component {
                                         </h3>
                                         <img
                                             src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
-                                            style={{width: "8rem", height: "8rem"}}/>
+                                            style={{width: "8rem", height: "8rem"}} alt="..."/>
                                     </header>
                                     <p>
                                         <strong>Email:</strong>{" "}

@@ -6,7 +6,7 @@ const Nav = () => {
     return (
         <header className="container-fluid">
             <nav className="navbar navbar-expand-md navbar-dark">
-                <Link to="#" className="navbar-brand">RecipeFinder</Link>
+                <Link to="/" className="navbar-brand">RecipeFinder</Link>
                 <button
                     className="navbar-toggler"
                     type="button"

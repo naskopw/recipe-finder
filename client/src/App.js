@@ -9,6 +9,7 @@ import {CategoryDetails} from "./Components/CategoryDetails/CategoryDetails";
 import PrivateRoute from './Components/PrivateRoute';
 import ShoppingList from "./Components/Tools/Shopping/ShoppingList";
 import ShoppingItemEdit from "./Components/Tools/Shopping/ShoppingItemEdit";
+import LogoutComponent from "./Components/Authentication/LogoutComponent";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                     <Route path="/register" component={Register}/>
                     <Route path="/profile" component={Profile}/>
                     <Route path="/login" component={Login}/>
+                    <Route path="/logout" component={LogoutComponent}/>
                     <Route path="/tools/shopping/edit/:id" component={ShoppingItemEdit}/>
                     <PrivateRoute path="/tools/shopping" component={ShoppingList}/>
                     <Route path="/">

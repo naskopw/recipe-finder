@@ -22,11 +22,9 @@ export const Search = () => {
         <div id="search">
             <Nav/>
             <div className="section-title text-center center">
-                <div className="overlay">
-                    <h2>Recipes starting with</h2>
-                    <hr/>
-                    <p>{startsWith}</p>
-                </div>
+                <h2>Recipes starting with</h2>
+                <hr/>
+                <p>{startsWith}</p>
             </div>
             <div className="container">
                 <div className="row align-items-center">
