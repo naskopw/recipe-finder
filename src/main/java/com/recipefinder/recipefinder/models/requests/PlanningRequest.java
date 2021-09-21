@@ -1,10 +1,11 @@
 package com.recipefinder.recipefinder.models.requests;
 
 import com.recipefinder.recipefinder.models.PartOfTheDay;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
-
+@NoArgsConstructor
 public class PlanningRequest {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Date date;

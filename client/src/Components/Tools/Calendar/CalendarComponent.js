@@ -5,7 +5,6 @@ import Nav from "../../NavLogged/Nav";
 import "./style.css"
 import {Link} from "react-router-dom";
 import CalendarService from "../../../Services/CalendarService";
-import {getRecipe} from "../../../Services/RecipeService";
 
 const CalendarComponent = () => {
     const [currentDate, setCurrentDate] = useState(new Date())
@@ -32,8 +31,15 @@ const CalendarComponent = () => {
 
             setPlans(await CalendarService.getForDay(currentDate))
         }
+
         fetchData()
     }, [currentDate])
+
+    async function onDeleteClick(itemId) {
+        const newPlans = plans.filter(p => p["id"] !== itemId)
+        await CalendarService.deletePlan(itemId)
+        setPlans(newPlans)
+    }
 
     return (
         <div id="page-calendar">
@@ -60,9 +66,13 @@ const CalendarComponent = () => {
                                 plans && plans.map((plan, index) => {
                                     return (
                                         <tr key={index}>
-                                            <th scope="row"><Link to="#">{plan["name"]}</Link></th>
+                                            <th scope="row"><Link
+                                                to={"/recipes/?id=" + plan["recipeId"]}>{plan["name"]}</Link></th>
                                             <td colSpan="2">{new Date(plan["date"]).toDateString()}</td>
                                             <td>{plan["partOfTheDay"]}</td>
+                                            <td
+                                                onClick={() => onDeleteClick(plan["id"])}><i className="fa fa-trash"/>
+                                            </td>
                                         </tr>
                                     )
                                 })
