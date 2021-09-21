@@ -65,50 +65,55 @@ const ShoppingList = () => {
     return (
         <div className="page-shopping-list">
             <Nav/>
-            <h1>What are you going to buy?</h1>
-            <div className="input-form">
-                <input type="text"
-                       placeholder="...food"/>
-                <button className="btn"
-                        onClick={() => {
-                            const input = document.querySelector("#root > div > div > div > input[type=text]")
-                            addItem(input.value)
-                            input.value = ""
-                        }}>Create
-                </button>
+            <div className="section-title text-center center">
+                <div className='header-box'>
+                    <h2>What are you going to buy?</h2>
+                    <hr/>
+                </div>
+                <div className="input-form">
+                    <input type="text"
+                           placeholder="...food"/>
+                    <button className="btn"
+                            onClick={() => {
+                                const input = document.querySelector("#root > div > div > div > input[type=text]")
+                                addItem(input.value)
+                                input.value = ""
+                            }}>Create
+                    </button>
+                </div>
+                <section id="section-shopping-list">
+                    {
+                        items.map((item, index) =>
+                            <div className="shopping-item"
+                                 key={item["id"]}>
+                                <div className="row">
+                                    <div className="col-lg-3">
+                                        <h3
+                                            className="unselectable"
+                                            onClick={() => crossItem(index + 1)}
+                                        >{trimTitle(item["title"])}</h3>
+                                    </div>
+                                    <div className="col-lg-3">
+                                        <p>{item["desc"]}</p>
+                                    </div>
+                                    <div className="col-lg-3">
+                                        <p>{item["quantity"]}</p>
+                                    </div>
+                                    <div className="col-lg-3">
+                                        <Link
+                                            to={"/tools/shopping/edit/" + item["id"]}>
+                                            <i className="fas fa-edit"/>
+                                        </Link>
+                                        <i className="fas fa-trash-alt"
+                                           onClick={() => deleteItemCallback(item["id"])}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
+                </section>
             </div>
-            <section id="section-shopping-list">
-                {
-                    items.map((item, index) =>
-                        <div className="shopping-item"
-                             key={item["id"]}>
-                            <div className="row">
-                                <div className="col-lg-3">
-                                    <h3
-                                        className="unselectable"
-                                        onClick={() => crossItem(index + 1)}
-                                    >{trimTitle(item["title"])}</h3>
-                                </div>
-                                <div className="col-lg-3">
-                                <p>{item["desc"]}</p>
-                            </div>
-                                <div className="col-lg-3">
-                                    <p>{item["quantity"]}</p>
-                                </div>
-                                <div className="col-lg-3">
-                                    <Link
-                                        to={"/tools/shopping/edit/" + item["id"]}>
-                                        <i className="fas fa-edit"/>
-                                    </Link>
-                                    <i className="fas fa-trash-alt"
-                                       onClick={() => deleteItemCallback(item["id"])}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    )
-                }
-            </section>
         </div>
     );
 };

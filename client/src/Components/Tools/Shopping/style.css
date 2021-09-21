@@ -57,3 +57,20 @@
 .page-shopping-edit .input-form input {
     margin: 0.1rem;
 }
+
+.page-shopping-list > .section-title > .header-box {
+    background: #444 url(../../../assets/img/grocery.jpg) center center no-repeat fixed;
+    background-size: cover;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    height: 250px;
+    box-shadow: inset 0 0 0 100vh rgba(0, 0, 0, 0.8);
+}
+
+.page-shopping-list h2 {
+    color: #fff;
+}
+
+.page-shopping-list hr {
+    margin: auto;
+}

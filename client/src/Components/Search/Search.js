@@ -24,7 +24,7 @@ export const Search = () => {
             <div className="section-title text-center center">
                 <h2>Recipes starting with</h2>
                 <hr/>
-                <p>{startsWith}</p>
+                <p>{startsWith.toUpperCase()}</p>
             </div>
             <div className="container">
                 <div className="row align-items-center">

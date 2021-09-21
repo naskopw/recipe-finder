@@ -3,6 +3,7 @@ import {Link} from "react-router-dom"
 import RecipeOverview from "../RecipeOverview/RecipeOverview"
 import {getCategory} from "../../Services/CategoryService"
 import Nav from '../NavMain/Nav'
+import "./style.css"
 
 export const CategoryDetails = ({match}) => {
     const categoryId = parseInt(match.params.id)
@@ -18,14 +19,15 @@ export const CategoryDetails = ({match}) => {
     }, [categoryId])
 
     return (
-        <div>
+        <div id="page-category-details">
+            <Nav/>
             {category &&
             <div>
                 <div className="section-title text-center center"
                      style={{
                          backgroundImage: `url('${decodeURI(category.image).replaceAll("\\", "/")}')`,
-                         backgroundSize: "cover",
-                         marginBottom: "50px"
+                         // backgroundSize: "cover",
+                         // marginBottom: "50px"
                      }}
                 >
                     <div className="overlay">
@@ -33,11 +35,10 @@ export const CategoryDetails = ({match}) => {
                         <hr/>
                     </div>
                 </div>
-                <Nav></Nav>
                 <div className='container'>
                     {category.recipes.map(recipe =>
                         <Link key={recipe.id} to={`/recipes/?id=${recipe.id}`}>
-                            <RecipeOverview recipe={recipe}></RecipeOverview>
+                            <RecipeOverview recipe={recipe}/>
                         </Link>
                     )}
                 </div>
