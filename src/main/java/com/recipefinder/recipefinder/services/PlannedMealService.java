@@ -42,23 +42,23 @@ public class PlannedMealService {
 
     public List<PlannedRecipeDto> getAll() {
         List<PlannedRecipeDto> result = new ArrayList<>();
-        plannedMealRepository.findAll().forEach(r ->
-                result.add(PlannedMealMapper.toPlannedDto(r.getRecipe(),
-                        r.getPlannedFor(), r.getPartOfTheDay())));
+        plannedMealRepository.findAll().forEach(plan ->
+                result.add(PlannedMealMapper.toPlannedDto(plan)));
         return result;
     }
 
     public void deleteMeal(Long id, Long userId) {
-        var meal = plannedMealRepository.findById(id).orElseThrow();
-        if (meal.getUser().getId().equals(userId))
-            plannedMealRepository.deleteById(id);
+        var meal = plannedMealRepository.findById(id).orElse(null);
+        if (meal != null) {
+            if (meal.getUser().getId().equals(userId))
+                plannedMealRepository.deleteById(id);
+        }
     }
 
     public List<PlannedRecipeDto> getForDate(Date date) {
         List<PlannedRecipeDto> result = new ArrayList<>();
-        plannedMealRepository.findAllByPlannedFor(date).forEach(r ->
-                result.add(PlannedMealMapper.toPlannedDto(r.getRecipe(),
-                        r.getPlannedFor(), r.getPartOfTheDay())));
+        plannedMealRepository.findAllByPlannedFor(date).forEach(plan ->
+                result.add(PlannedMealMapper.toPlannedDto(plan)));
         return result;
     }
 }
