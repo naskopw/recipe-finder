@@ -1,0 +1,12 @@
+#calendar-widget-plan {
+    margin: 20px;
+}
+
+#page-plan-meal h1 {
+    margin: 1rem auto 1rem auto;
+}
+
+#page-plan-meal select {
+    margin: auto;
+    width: 30%;
+}

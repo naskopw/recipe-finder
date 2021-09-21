@@ -11,12 +11,14 @@ import ShoppingList from "./Components/Tools/Shopping/ShoppingList";
 import ShoppingItemEdit from "./Components/Tools/Shopping/ShoppingItemEdit";
 import LogoutComponent from "./Components/Authentication/LogoutComponent";
 import CalendarComponent from "./Components/Tools/Calendar/CalendarComponent";
+import PlanRecipeComponent from "./Components/Tools/Calendar/PlanRecipe/PlanRecipeComponent";
 
 function App() {
     return (
         <Router>
             <div className="App">
                 <Switch>
+                    <PrivateRoute path="/recipes/fav/:id" component={PlanRecipeComponent}/>
                     <Route path="/recipes"><RecipeDetails/></Route>
                     <Route path="/categories/:id" component={CategoryDetails}/>
                     <Route path="/categories" component={Search}/>

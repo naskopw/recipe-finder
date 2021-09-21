@@ -40,7 +40,7 @@ export const RecipeDetails = () => {
                     <button
                         className={isFavorite ? "btn-rf-primary" : "btn-rf-secondary"}>Favorite
                     </button>
-                    <Link to="#" className="btn-rf-secondary">Plan</Link>
+                    <Link to={"/recipes/fav/" + recipeId} className="btn-rf-secondary">Plan</Link>
                 </div>
                 <div className='container'>
                     <h2>Ingredients:</h2>

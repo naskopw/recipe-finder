@@ -56,10 +56,10 @@ const ShoppingItemEdit = ({match}) => {
                            quantity: parseInt(e.target.value)
                        })}/>
             </form>
-            <Link className="btn"
+            <Link className="btn-rf-secondary"
                   to="/tools/shopping">Back
             </Link>
-            <button className="btn"
+            <button className="btn-rf-secondary"
                     onClick={() => {
                         submit()
                     }}>Create
