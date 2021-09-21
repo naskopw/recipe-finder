@@ -73,7 +73,7 @@ const ShoppingList = () => {
                 <div className="input-form">
                     <input type="text"
                            placeholder="...food"/>
-                    <button className="btn"
+                    <button className="btn-rf-primary"
                             onClick={() => {
                                 const input = document.querySelector("#root > div > div > div > div.input-form > input[type=text]")
                                 addItem(input.value)

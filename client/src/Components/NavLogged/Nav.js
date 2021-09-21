@@ -22,6 +22,7 @@ const Nav = () => {
                     <ul className="navbar-nav text-center ms-auto">
                         <li><Link to="/tools/calendar" className="nav-link">Calendar</Link></li>
                         <li><Link to="/tools/shopping" className="nav-link">shopping list</Link></li>
+                        <li><Link to="/profile" className="nav-link">Profile</Link></li>
                         <li><Link to="/logout" className="nav-link">Logout</Link></li>
                     </ul>
                 </div>

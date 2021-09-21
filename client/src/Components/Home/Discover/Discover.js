@@ -7,7 +7,7 @@ function Discover() {
         <section id="section-discover">
             <h1>RecipeFinder</h1>
             <p>Find the right recipes for the ingredients you have</p>
-            <Link to="#about">Discover</Link>
+            <Link className="btn-rf-primary" to="#about">Discover</Link>
         </section>
 
     );

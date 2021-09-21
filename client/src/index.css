@@ -140,3 +140,10 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
     color: #fff;
     background-color: #f3a281;
 }
+
+button {
+    border: none;
+    cursor: auto;
+    padding: 12px 20px;
+    line-height: normal;
+}
