@@ -27,7 +27,10 @@ const ShoppingItemEdit = ({match}) => {
     return (
         <div className="page-shopping-edit">
             <Nav/>
-            <h1>What are you going to buy?</h1>
+            <div className="header-box">
+                <h2>What are you going to buy?</h2>
+                <hr/>
+            </div>
             <form className="input-form">
                 <p>Title</p>
                 <input type="text"
