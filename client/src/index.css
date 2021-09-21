@@ -110,3 +110,33 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
     outline: 1px solid rgba(255, 255, 255, 0.5);
     outline-offset: -8px;
 }
+
+.btn-rf-primary {
+    color: #fff;
+    background-color: #f3a281;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 20px;
+    letter-spacing: 0.5px;
+}
+
+.btn-rf-primary:hover {
+    color: #F6F6F6;
+    background-color: #fdac8b;
+}
+
+.btn-rf-secondary {
+    color: #999999;
+    background-color: #eeeeee;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 20px;
+    letter-spacing: 0.5px;
+}
+
+.btn-rf-secondary:hover {
+    color: #fff;
+    background-color: #f3a281;
+}

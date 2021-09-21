@@ -35,3 +35,14 @@
     width: 30%;
     height: 30%;
 }
+
+#recipe-details > .container-fluid > button {
+    border-right: 2px solid #fff;
+}
+
+#recipe-details button {
+    border: none;
+    cursor: auto;
+    padding: 12px 20px;
+    line-height: normal;
+}

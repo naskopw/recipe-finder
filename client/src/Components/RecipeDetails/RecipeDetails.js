@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from 'react'
-import {useLocation} from "react-router-dom"
+import {Link, useLocation} from "react-router-dom"
 import {getRecipe} from '../../Services/RecipeService'
 import Nav from '../NavMain/Nav'
 import './style.css'
@@ -7,6 +7,8 @@ import './style.css'
 export const RecipeDetails = () => {
     const recipeId = parseInt(new URLSearchParams(useLocation().search).get('id'))
     const [recipe, setRecipe] = useState()
+
+    const isFavorite = true
 
     useEffect(() => {
         async function fetchData() {
@@ -30,10 +32,15 @@ export const RecipeDetails = () => {
                             <p>Time: {recipe.time}</p>
                             <p>Servings: {recipe.servings}</p>
                             <hr/>
-                            {/* <i onClick={addToFavorite} className={favoriteImgClass}></i> */}
                             <p>{recipe.description}</p>
                         </div>
                     </div>
+                </div>
+                <div className="container-fluid text-center">
+                    <button
+                        className={isFavorite ? "btn-rf-primary" : "btn-rf-secondary"}>Favorite
+                    </button>
+                    <Link to="#" className="btn-rf-secondary">Plan</Link>
                 </div>
                 <div className='container'>
                     <h2>Ingredients:</h2>
