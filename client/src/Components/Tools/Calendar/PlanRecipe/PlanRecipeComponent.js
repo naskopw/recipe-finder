@@ -32,9 +32,9 @@ const PlanRecipeComponent = ({match}) => {
                 <select className="form-select form-select-lg mb-3"
                         aria-label=".form-select-lg example"
                         defaultValue={true}>
-                    <option value="1">Breakfast</option>
-                    <option value="2">Lunch</option>
-                    <option value="3">Dinner</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
                 </select>
 
                 <div id="calendar-widget-plan"/>
