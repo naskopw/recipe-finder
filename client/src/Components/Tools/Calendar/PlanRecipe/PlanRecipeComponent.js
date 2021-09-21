@@ -29,8 +29,9 @@ const PlanRecipeComponent = ({match}) => {
             <Nav/>
             <div className="container text-center">
                 <h1>Plan your meal</h1>
-                <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                    <option selected>Choose part of the day</option>
+                <select className="form-select form-select-lg mb-3"
+                        aria-label=".form-select-lg example"
+                        defaultValue={true}>
                     <option value="1">Breakfast</option>
                     <option value="2">Lunch</option>
                     <option value="3">Dinner</option>
