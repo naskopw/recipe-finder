@@ -10,6 +10,7 @@ import PrivateRoute from './Components/PrivateRoute';
 import ShoppingList from "./Components/Tools/Shopping/ShoppingList";
 import ShoppingItemEdit from "./Components/Tools/Shopping/ShoppingItemEdit";
 import LogoutComponent from "./Components/Authentication/LogoutComponent";
+import CalendarComponent from "./Components/Tools/Calendar/CalendarComponent";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                     <Route path="/login" component={Login}/>
                     <Route path="/logout" component={LogoutComponent}/>
                     <Route path="/tools/shopping/edit/:id" component={ShoppingItemEdit}/>
+                    <PrivateRoute path="/tools/calendar" component={CalendarComponent}/>
                     <PrivateRoute path="/tools/shopping" component={ShoppingList}/>
                     <Route path="/">
                         <Home/>
