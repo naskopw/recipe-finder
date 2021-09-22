@@ -4,9 +4,11 @@ import "./style.css"
 const CategoryOverviewCard = ({category}) => {
     return (
         <div className="category-overview-card">
-            <img src={decodeURI(category.image)} alt="..."/>
+            <img src={category ?
+                decodeURI(category.image) : "/img/null.png"
+            } alt="..."/>
             <div className="container-text text-center">
-                <h2>{category.name}</h2>
+                <h2>{category ? category.name : "Not found"}</h2>
             </div>
         </div>
     );
