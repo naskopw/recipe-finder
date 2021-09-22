@@ -1,9 +1,9 @@
 import {React, useEffect, useState} from 'react'
 import {Link} from "react-router-dom"
-import {CategoryOverview} from '../CategoryOverview'
 import Nav from '../NavMain/Nav'
 import './style.css'
 import {getCategoryByStart} from "../../Services/CategoryService"
+import CategoryOverviewCard from "../Cards/CategoryOverview/CategoryOverviewCard";
 
 export const Search = () => {
     const [startsWith, setStartsWith] = useState('A')
@@ -53,17 +53,20 @@ export const Search = () => {
                                 </ol>
                             </li>
                         </ul>
-                        <div className="clearfix"/>
-                        <div className="row">
-                            {categories &&
-                            <div>
-                                {categories.map(category =>
-                                    <Link key={category.id} to={`/categories/${category.id}`}>
-                                        <CategoryOverview category={category}/>
-                                    </Link>
-                                )}
+                        <div className="container">
+                            <div className="row">
+                                <div className="col">
+                                    {categories &&
+                                    <div>
+                                        {categories.map(category =>
+                                            <Link key={category.id} to={`/categories/${category.id}`}>
+                                                <CategoryOverviewCard category={category}/>
+                                            </Link>
+                                        )}
+                                    </div>
+                                    }
+                                </div>
                             </div>
-                            }
                         </div>
                     </div>
                 </div>
