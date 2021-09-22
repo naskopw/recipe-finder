@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import "./style.css"
 import RecipeOverview from "../../RecipeOverview/RecipeOverview";
 import {getTrending} from "../../../Services/RecipeService";
+import RecipeOverviewCard from "../../Cards/RecipeOverview/RecipeOverviewCard";
 
 const Trending = () => {
     const [trendingRecipes, setTrendingRecipes] = useState([])
@@ -42,7 +43,7 @@ const Trending = () => {
                     {trendingRecipes.map(recipe =>
                         <div className="col">
                             <Link key={recipe.id} to={`/recipes/?id=${recipe.id}`}>
-                                <RecipeOverview recipe={recipe}/>
+                                <RecipeOverviewCard recipe={recipe}/>
                             </Link>
                         </div>
                     )}

@@ -111,6 +111,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
     outline-offset: -8px;
 }
 
+/*Buttons*/
 .btn-rf-primary {
     color: #fff;
     background-color: #f3a281;
@@ -146,4 +147,30 @@ button {
     cursor: auto;
     padding: 12px 20px;
     line-height: normal;
+}
+
+/*Headers*/
+.rf-header {
+    padding: 32px;
+    background-color: #4c4c4c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rf-header h2 {
+    color: #ffffff;
+}
+
+.rf-header p {
+    text-align: center !important;
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    color: #bdbdbd;
+    font-weight: 400;
+}
+
+.rf-header hr {
+    margin: auto auto 20px auto;
 }

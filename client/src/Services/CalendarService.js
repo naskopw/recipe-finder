@@ -15,4 +15,13 @@ export default class CalendarService {
         let response = await axios.delete(API_URL, {headers: authHeader()})
         return response.data
     }
+
+    static async planMeal(recipeId, date, partOfTheDay) {
+        const API_URL = `${process.env.REACT_APP_API_BASE_URL}/planning/${recipeId}`
+        let response = await axios.post(API_URL, {
+            date: date,
+            partOfTheDay: partOfTheDay
+        }, {headers: authHeader()})
+        return response.data
+    }
 }

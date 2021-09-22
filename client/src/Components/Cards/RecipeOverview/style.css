@@ -1,0 +1,88 @@
+.recipe-overview-card {;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    justify-items: start;
+    box-sizing: border-box;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .recipe-overview-card {
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr;
+    }
+    .recipe-overview-card a
+    {
+        position: relative;
+        right: 8rem;
+    }
+}
+
+.recipe-overview-card img {
+    justify-self: center;
+    max-width: 280px;
+    max-height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    opacity: 0.85;
+}
+
+.recipe-overview-card img:hover {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.recipe-overview-card > .container-text {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 20px 40px 0;
+}
+
+.recipe-overview-card h2 {
+    margin-bottom: 5px;
+}
+
+.recipe-overview-card > .container-text > .container__text__star {
+    margin-bottom: 5px;
+}
+
+.recipe-overview-card > .container-text > .section-card-bottom > .card-timing-container {
+    display: flex;
+    margin-right: 150px;
+}
+
+.recipe-overview-card > .container-text > .section-card-bottom > .card-timing-container > .card-timing-container-inner > h2 {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #818189;
+}
+
+.recipe-overview-card > .container-text > .section-card-bottom > .card-timing-container > .card-timing-container-inner {
+    margin-right: 100px;
+}
+
+.recipe-overview-card > .container-text > .section-card-bottom {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 10px 20px 0;
+}
+
+.container__text__star {
+    color: #f3a281;
+}
+
+.recipe-overview-card p {
+    color: #777777;
+}
+
+.recipe-overview-card > .container-text > .section-card-bottom > .card-timing-container > .card-timing-container-inner > p {
+    margin-bottom: 0;
+}

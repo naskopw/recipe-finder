@@ -1,3 +1,4 @@
+//FIXME: deprecated
 import React from 'react';
 
 const RecipeOverview = ({recipe}) => {

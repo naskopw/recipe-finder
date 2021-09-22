@@ -4,6 +4,7 @@ import RecipeOverview from "../RecipeOverview/RecipeOverview"
 import {getCategory} from "../../Services/CategoryService"
 import Nav from '../NavMain/Nav'
 import "./style.css"
+import RecipeOverviewCard from "../Cards/RecipeOverview/RecipeOverviewCard";
 
 export const CategoryDetails = ({match}) => {
     const categoryId = parseInt(match.params.id)
@@ -38,7 +39,7 @@ export const CategoryDetails = ({match}) => {
                 <div className='container'>
                     {category.recipes.map(recipe =>
                         <Link key={recipe.id} to={`/recipes/?id=${recipe.id}`}>
-                            <RecipeOverview recipe={recipe}/>
+                            <RecipeOverviewCard recipe={recipe}/>
                         </Link>
                     )}
                 </div>
