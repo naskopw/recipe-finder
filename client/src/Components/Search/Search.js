@@ -21,13 +21,28 @@ export const Search = () => {
     return (
         <div id="search">
             <Nav/>
-            <div className="section-title text-center center">
+            <div className="rf-header text-center">
                 <h2>Recipes starting with</h2>
                 <hr/>
-                <p>{startsWith.toUpperCase()}</p>
+                <h2>{startsWith.toUpperCase()}</h2>
             </div>
-            <div className="container">
-                <div className="row align-items-center">
+            <div className="container text-center">
+                <div className="categories">
+                    {
+                        "abcdefghijklmnopqrstuvwxyz".split("").map(letter =>
+                            <Link key={letter}
+                                  className={activeFilter === letter ? "btn-rf-primary" : "btn-rf-secondary"}
+                                  onClick={() => {
+                                      setActiveFilter(letter)
+                                      setStartsWith(letter)
+                                  }}
+                                  to={`/categories?startsWith=${letter.toUpperCase()}`}
+                            >
+                                {letter.toUpperCase()}
+                            </Link>
+                        )}
+                </div>
+                <div className="row">
                     <input type="search"
                            className="form-control"
                            id="searchKeywordForm"
@@ -35,42 +50,22 @@ export const Search = () => {
                                setStartsWith(e.target.value)
                            }}
                            placeholder="Search by keyword"/>
-                    <div className="categories">
-                        <ul className="cat">
-                            <li>
-                                <ol className="type">
-                                    {
-                                        "abcdefghijklmnopqrstuvwxyz".split("").map(letter =>
-                                            <li key={letter}><Link
-                                                className={activeFilter === letter ? 'active' : ''}
-                                                onClick={() => {
-                                                    setActiveFilter(letter)
-                                                    setStartsWith(letter)
-                                                }}
-                                                to={`/categories?startsWith=${letter.toUpperCase()}`}>{letter.toUpperCase()}</Link>
-                                            </li>)
-                                    }
-                                </ol>
-                            </li>
-                        </ul>
-                        <div className="container">
-                            <div className="row">
-                                <div className="col">
-                                    {categories &&
-                                    <div>
-                                        {categories.map(category =>
-                                            <Link key={category.id} to={`/categories/${category.id}`}>
-                                                <CategoryOverviewCard category={category}/>
-                                            </Link>
-                                        )}
-                                    </div>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
+            {categories &&
+            <div className="container">
+                <div className="row">
+                    {categories.map(category =>
+                        <div className="col">
+                            <Link
+                                key={category.id} to={`/categories/${category.id}`}>
+                                <CategoryOverviewCard category={category}/>
+                            </Link>
+                        </div>
+                    )}
+                </div>
+            </div>
+            }
         </div>
     )
 }

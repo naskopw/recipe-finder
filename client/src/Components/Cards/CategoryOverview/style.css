@@ -14,9 +14,8 @@
 
 .category-overview-card img {
     justify-self: center;
-    max-width: 280px;
-    max-height: 200px;
-    width: 100%;
+    width: 280px;
+    height: 200px;
     opacity: 0.85;
     box-shadow: 10px 0 20px rgba(0, 0, 0, 0.356);
 }
@@ -34,5 +33,6 @@
 
 .category-overview-card > .container-text > h2 {
     color: #ffffff;
+    font-size: 32px;
     margin: auto;
 }
