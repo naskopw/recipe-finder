@@ -1,0 +1,26 @@
+#page-calendar > .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    #page-calendar > .grid-container {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+    }
+}
+
+#meals-table {
+    color: #f3a281;
+}
+
+#page-calendar a {
+    color:#777;
+    font-weight: 450;
+}
+#page-calendar table,
+#page-calendar h1{
+    margin-top: 20px;
+}

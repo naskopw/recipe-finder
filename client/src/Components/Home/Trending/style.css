@@ -1,0 +1,10 @@
+#section-trending > .rf-header {
+    background-image: url("../../../assets/img/trending.jpg");
+    box-shadow: inset 0 0 0 100vh rgba(0, 0, 0, 0.8);
+    padding: 50px;
+}
+
+#section-trending > .rf-header p {
+    color: #999;
+    margin: 3rem 0;
+}

@@ -13,9 +13,9 @@ export const CategoryOverview = (props) => {
                             <h4>{category.name}</h4>
                         </div>
                         <img key={category.id} src={decodeURI(category.image)}
-                            className="img-responsive"
-                            alt={`Category ${category.name}`}
-                            style={{ width: imgWidth, height: imgHeight }}></img>
+                             className="img-responsive"
+                             alt={`Category ${category.name}`}
+                             style={{width: imgWidth, height: imgHeight}}/>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import React, {Component} from "react";
+import {Redirect} from "react-router-dom";
 import AuthService from "../../Services/AuthService";
-import { Nav } from "../Nav/Nav"
+import Nav from "../NavLogged/Nav"
 import "./style.css"
 
 export default class Profile extends Component {
@@ -11,32 +11,32 @@ export default class Profile extends Component {
         this.state = {
             redirect: null,
             userReady: false,
-            currentUser: { username: "" }
+            currentUser: {username: ""}
         };
     }
 
     componentDidMount() {
         const currentUser = AuthService.getCurrentUser();
 
-        if (!currentUser) this.setState({ redirect: "/home" });
-        this.setState({ currentUser: currentUser, userReady: true })
+        if (!currentUser) this.setState({redirect: "/home"});
+        this.setState({currentUser: currentUser, userReady: true})
     }
 
     render() {
         if (this.state.redirect) {
-            return <Redirect to={this.state.redirect} />
+            return <Redirect to={this.state.redirect}/>
         }
 
-        const { currentUser } = this.state;
+        const {currentUser} = this.state;
 
         return (
             <div>
-                <Nav isStatic={true}></Nav>
+                <Nav isStatic={true}/>
                 <div id="contact" className="text-center">
                     <div className="container">
                         <div className="section-title text-center">
                             <h2>Profile</h2>
-                            <hr />
+                            <hr/>
                         </div>
                         <div className="container">
                             {(this.state.userReady) ?
@@ -45,8 +45,9 @@ export default class Profile extends Component {
                                         <h3>
                                             <strong>{currentUser.username}</strong>
                                         </h3>
-                                        <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
-                                                style={{ width: "8rem", height: "8rem" }}></img>
+                                        <img
+                                            src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+                                            style={{width: "8rem", height: "8rem"}} alt="..."/>
                                     </header>
                                     <p>
                                         <strong>Email:</strong>{" "}
@@ -55,7 +56,8 @@ export default class Profile extends Component {
                                     <strong>Authorities:</strong>
                                     <ul>
                                         {currentUser.roles &&
-                                            currentUser.roles.map((role, index) => <li key={index}>{role.replace("ROLE_","")}</li>)}
+                                        currentUser.roles.map((role, index) => <li
+                                            key={index}>{role.replace("ROLE_", "")}</li>)}
                                     </ul>
                                 </div> : null}
                         </div>

@@ -1,0 +1,33 @@
+version: "3.9"
+
+services: 
+    db:
+        image: mysql:8.0.26
+        volumes:
+            - db_data:/var/lib/mysql    
+        restart: always
+        environment:
+            MYSQL_USER: root
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: recipe-finder
+        ports:
+            - 3306:3306
+    recipe-finder-front-end:
+        container_name: front-end
+        build: ./client
+        ports:
+            - 3000:3000
+    
+    recipe-finder-back-end:
+        container_name: back-end
+        build: ./
+        ports:
+            - 8080:8080
+        depends_on:
+            - db
+        environment:
+            MYSQL_HOST: db
+            DB_USER: root
+            DB_PASS: root
+volumes:
+    db_data:

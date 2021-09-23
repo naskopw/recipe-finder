@@ -1,0 +1,13 @@
+#page-category-details .section-title {
+    background-size: cover;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    height: 250px;
+    box-shadow: inset 0 0 0 100vh rgba(0, 0, 0, 0.8);
+}
+
+
+#page-category-details hr {
+    margin: auto auto 20px auto;
+
+}

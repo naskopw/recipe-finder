@@ -87,7 +87,7 @@
 
 			this.processContent( content, currentLink );
 
-            // Nav
+            // NavMain
             if(this.$el.attr('data-lightbox-gallery')){
                 var galleryItems = $('[data-lightbox-gallery="'+ this.$el.attr('data-lightbox-gallery') +'"]');
 

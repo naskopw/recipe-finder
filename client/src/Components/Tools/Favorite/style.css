@@ -1,0 +1,20 @@
+#page-favorites .rf-header {
+    background-image: url("../../../assets/img/favorites.jpg");
+    box-shadow: inset 0 0 0 100vh rgba(0, 0, 0, 0.8);
+}
+
+#page-favorites {
+    background-color: rgb(246, 246, 246);
+}
+
+#page-favorites > #section-favorites > .container {
+    margin-top: 30px;
+}
+
+#page-favorites > #section-favorites > .container a {
+    margin: auto;
+}
+
+#page-favorites > #section-favorites > .cookbook-add-container input {
+    margin-right: 5px;
+}

@@ -1,0 +1,94 @@
+#section-shopping-list .shopping-item {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 30px auto 10px auto;
+    width: 80%
+}
+
+.page-shopping-list .input-form input {
+    margin: 10px;
+}
+
+.page-shopping-edit .input-form {
+    padding: 50px;
+}
+
+.page-shopping-edit .input-form p {
+    color: #777;
+    font-weight: 400;
+}
+
+#section-shopping-list .shopping-item:hover {
+    background-color: #f3a281;
+    transition: background-color 1s;
+}
+
+.crossed {
+    text-decoration: line-through;
+}
+
+.page-shopping-list,
+.page-shopping-edit {
+    text-align: center;
+}
+
+.page-shopping-list h1 {
+    margin-top: 20px;
+}
+
+.unselectable {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#section-shopping-list {
+    padding-bottom: 3rem;
+}
+
+#section-shopping-list a {
+    color: #777;
+    cursor: auto;
+}
+
+.page-shopping-edit .input-form input {
+    margin: 0.1rem;
+}
+
+.page-shopping-list > .section-title > .header-box,
+.page-shopping-edit > .header-box {
+    background: #444 url(../../../assets/img/grocery.jpg) center center no-repeat fixed;
+    background-size: cover;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    height: 250px;
+    box-shadow: inset 0 0 0 100vh rgba(0, 0, 0, 0.8);
+}
+
+.page-shopping-list h2,
+.page-shopping-edit h2 {
+    color: #fff;
+}
+
+.page-shopping-list hr,
+.page-shopping-edit hr {
+    margin: auto;
+}
+
+.page-shopping-edit > .input-form {
+    position: relative;
+    top: -4rem;
+}
+
+
+.page-shopping-edit > a,
+.page-shopping-edit > button {
+
+    position: relative;
+    top: -6.5rem;
+}
+
+.page-shopping-edit > a {
+    border-right: 2px solid #ffffff;
+}

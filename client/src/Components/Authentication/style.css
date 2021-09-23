@@ -1,61 +1,84 @@
 #contact {
-	padding: 100px 0 60px 0;
-	background: #F6F6F6;
+    padding: 100px 0 60px 0;
+    background: #F6F6F6;
 }
+
 #contact .section-title p {
-	color: #777;
+    color: #777;
 }
+
 #contact form {
-	padding: 0;
+    padding: 0;
 }
+
 #contact h3 {
-	text-transform: uppercase;
-	font-size: 20px;
-	font-weight: 400;
-	color: #555;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 400;
+    color: #555;
 }
+
 #contact .text-danger {
-	color: #cc0033;
-	text-align: left;
+    color: #cc0033;
+    text-align: left;
 }
+
 label {
-	font-size: 12px;
-	font-weight: 400;
-	font-family: 'Open Sans', sans-serif;
-	float: left;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    float: left;
 }
+
 #contact .form-control {
-	display: block;
-	width: 100%;
-	padding: 6px 12px;
-	font-size: 16px;
-	line-height: 1.42857143;
-	color: #444;
-	background-color: #fff;
-	background-image: none;
-	border: 1px solid #ddd;
-	border-radius: 0;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	-webkit-transition: none;
-	-o-transition: none;
-	transition: none;
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #444;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
 }
+
 #contact .form-control:focus {
-	border-color: #999;
-	outline: 0;
-	-webkit-box-shadow: transparent;
-	box-shadow: transparent;
+    border-color: #999;
+    outline: 0;
+    -webkit-box-shadow: transparent;
+    box-shadow: transparent;
 }
+
 .form-control::-webkit-input-placeholder {
-color: #777;
+    color: #777;
 }
+
 .form-control:-moz-placeholder {
-color: #777;
+    color: #777;
 }
+
 .form-control::-moz-placeholder {
-color: #777;
+    color: #777;
 }
+
 .form-control:-ms-input-placeholder {
-color: #777;
+    color: #777;
+}
+
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;
+}
+
+#contact .section-title hr
+{
+    margin: auto auto 20px auto;
 }
