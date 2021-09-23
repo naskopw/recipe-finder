@@ -14,13 +14,15 @@ import CalendarComponent from "./Components/Tools/Calendar/CalendarComponent";
 import PlanRecipeComponent from "./Components/Tools/Calendar/PlanRecipe/PlanRecipeComponent";
 import FavoriteComponent from "./Components/Tools/Favorite/FavoriteComponent";
 import CookbookComponent from "./Components/Tools/Favorite/Cookbook/CookbookComponent";
+import AddFavoriteComponent from "./Components/Tools/Favorite/AddToFavorite/AddFavoriteComponent";
 
 function App() {
     return (
         <Router>
             <div className="App">
                 <Switch>
-                    <PrivateRoute path="/recipes/fav/:id" component={PlanRecipeComponent}/>
+                    <PrivateRoute path="/recipes/plan/:id" component={PlanRecipeComponent}/>
+                    <PrivateRoute path="/recipes/fav/:id" component={AddFavoriteComponent}/>
                     <Route path="/recipes"><RecipeDetails/></Route>
                     <PrivateRoute path="/cookbook/:id" component={CookbookComponent}/>
                     <Route path="/categories/:id" component={CategoryDetails}/>

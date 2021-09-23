@@ -42,11 +42,12 @@ export const RecipeDetails = () => {
                     </div>
                 </div>
                 <div className="container-fluid text-center">
-                    <button
+                    <Link
                         className={isFavorite ? "btn-rf-primary" : "btn-rf-secondary"}
-                        onClick={() => onFavoriteClick()}>Favorite
-                    </button>
-                    <Link to={"/recipes/fav/" + recipeId} className="btn-rf-secondary">Plan</Link>
+                        to={"/recipes/fav/" + recipeId}
+                    >Favorite
+                    </Link>
+                    <Link to={"/recipes/plan/" + recipeId} className="btn-rf-secondary">Plan</Link>
                 </div>
                 <div className='container'>
                     <h2>Ingredients:</h2>
