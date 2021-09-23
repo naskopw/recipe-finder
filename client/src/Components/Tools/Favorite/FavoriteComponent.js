@@ -4,7 +4,6 @@ import "./style.css"
 import {Link} from "react-router-dom";
 import CategoryOverviewCard from "../../Cards/CategoryOverview/CategoryOverviewCard";
 import {FavoriteService} from "../../../Services/FavoriteService";
-import {getCategory} from "../../../Services/CategoryService";
 
 const FavoriteComponent = () => {
 

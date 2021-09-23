@@ -22,15 +22,15 @@ function App() {
                 <Switch>
                     <PrivateRoute path="/recipes/fav/:id" component={PlanRecipeComponent}/>
                     <Route path="/recipes"><RecipeDetails/></Route>
-                    <Route path="/cookbook/:id" component={CookbookComponent}/>
+                    <PrivateRoute path="/cookbook/:id" component={CookbookComponent}/>
                     <Route path="/categories/:id" component={CategoryDetails}/>
                     <Route path="/categories" component={Search}/>
                     <Route path="/register" component={Register}/>
-                    <Route path="/profile" component={Profile}/>
+                    <PrivateRoute path="/profile" component={Profile}/>
                     <Route path="/login" component={Login}/>
-                    <Route path="/logout" component={LogoutComponent}/>
+                    <PrivateRoute path="/logout" component={LogoutComponent}/>
 
-                    <Route path="/tools/shopping/edit/:id" component={ShoppingItemEdit}/>
+                    <PrivateRoute path="/tools/shopping/edit/:id" component={ShoppingItemEdit}/>
                     <PrivateRoute path="/tools/calendar" component={CalendarComponent}/>
                     <PrivateRoute path="/tools/favorite" component={FavoriteComponent}/>
                     <PrivateRoute path="/tools/shopping" component={ShoppingList}/>

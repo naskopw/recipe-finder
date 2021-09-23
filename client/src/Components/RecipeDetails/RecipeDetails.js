@@ -20,6 +20,11 @@ export const RecipeDetails = () => {
     }, [recipeId])
 
     const imgSize = "250px"
+
+    function onFavoriteClick() {
+        return undefined;
+    }
+
     return (
         <div>
             <Nav/>
@@ -38,7 +43,8 @@ export const RecipeDetails = () => {
                 </div>
                 <div className="container-fluid text-center">
                     <button
-                        className={isFavorite ? "btn-rf-primary" : "btn-rf-secondary"}>Favorite
+                        className={isFavorite ? "btn-rf-primary" : "btn-rf-secondary"}
+                        onClick={() => onFavoriteClick()}>Favorite
                     </button>
                     <Link to={"/recipes/fav/" + recipeId} className="btn-rf-secondary">Plan</Link>
                 </div>
