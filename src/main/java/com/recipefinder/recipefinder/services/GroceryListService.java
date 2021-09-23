@@ -2,7 +2,7 @@ package com.recipefinder.recipefinder.services;
 
 import com.recipefinder.recipefinder.dto.mappers.GroceryMapper;
 import com.recipefinder.recipefinder.models.GroceryItem;
-import com.recipefinder.recipefinder.dto.GroceryDto;
+import com.recipefinder.recipefinder.dto.models.GroceryDto;
 import com.recipefinder.recipefinder.repository.GroceryListRepository;
 import com.recipefinder.recipefinder.repository.authentication.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

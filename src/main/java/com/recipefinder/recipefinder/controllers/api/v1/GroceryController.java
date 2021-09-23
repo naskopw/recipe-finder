@@ -1,6 +1,6 @@
 package com.recipefinder.recipefinder.controllers.api.v1;
 
-import com.recipefinder.recipefinder.dto.GroceryDto;
+import com.recipefinder.recipefinder.dto.models.GroceryDto;
 import com.recipefinder.recipefinder.security.services.UserDetailsImpl;
 import com.recipefinder.recipefinder.services.GroceryListService;
 import lombok.RequiredArgsConstructor;

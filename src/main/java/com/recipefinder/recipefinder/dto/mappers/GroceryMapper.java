@@ -1,6 +1,6 @@
 package com.recipefinder.recipefinder.dto.mappers;
 
-import com.recipefinder.recipefinder.dto.GroceryDto;
+import com.recipefinder.recipefinder.dto.models.GroceryDto;
 import com.recipefinder.recipefinder.models.GroceryItem;
 
 public class GroceryMapper {

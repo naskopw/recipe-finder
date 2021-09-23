@@ -1,4 +1,4 @@
-package com.recipefinder.recipefinder.dto;
+package com.recipefinder.recipefinder.dto.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
