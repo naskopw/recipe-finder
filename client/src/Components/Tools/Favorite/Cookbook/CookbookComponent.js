@@ -9,14 +9,21 @@ const CookbookComponent = ({match}) => {
 
     const [category, setCategory] = useState([])
 
-    useEffect(() => {
-        async function fetchData() {
-            let category = await FavoriteService.get(categoryId)
-            setCategory(category)
-        }
+    async function fetchData() {
+        let category = await FavoriteService.get(categoryId)
+        setCategory(category)
+    }
 
+    useEffect(() => {
         fetchData()
     }, [])
+
+    async function removeFav(recipeId) {
+        await FavoriteService.removeRecipe(categoryId, recipeId)
+        await fetchData()
+
+    }
+
     return (
         <div id={"page-cookbook"}>
             <Nav/>
@@ -26,6 +33,9 @@ const CookbookComponent = ({match}) => {
                     category.recipes.map(recipe => {
                         return (
                             <div className="col" key={recipe.id}>
+                                <button className="btn-rf-primary"
+                                        onClick={() => removeFav(recipe.id)}>X
+                                </button>
                                 <RecipeOverviewCard recipe={recipe}/>
                             </div>
                         )

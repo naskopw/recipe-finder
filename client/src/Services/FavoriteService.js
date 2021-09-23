@@ -19,4 +19,10 @@ export class FavoriteService {
         let response = await axios.post(API_URL, {}, {headers: authHeader()})
         return response.data
     }
+
+    static async removeRecipe(categoryId, recipeId) {
+        const API_URL = `${process.env.REACT_APP_API_BASE_URL}/favorite/${categoryId}/recipe/${recipeId}`
+        let response = await axios.delete(API_URL, {headers: authHeader()})
+        return response.data
+    }
 }
