@@ -44,7 +44,8 @@ public class FavoriteController {
     @PostMapping("/")
     public ResponseEntity<String> addItem(@AuthenticationPrincipal UserDetailsImpl user,
                                           @RequestBody Map<String, String> args) {
-        favoriteService.createCookbook(args.get("title"), user.getId());
+        favoriteService.createCookbook(args.get("title"), user.getId(),
+                null, args.get("image"));
         return ResponseEntity.ok().body("Successful");
     }
 
