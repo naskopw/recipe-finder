@@ -13,7 +13,7 @@ const AddFavoriteComponent = ({match}) => {
     useEffect(() => {
         async function fetchData() {
             let categories = await FavoriteService.getAll()
-            setCategories(categories)
+            setCategories(categories.reverse())
         }
 
         fetchData()

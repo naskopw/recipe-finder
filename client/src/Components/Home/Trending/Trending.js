@@ -29,9 +29,7 @@ const Trending = () => {
                 <div className="row">
                     {trendingRecipes.map(recipe =>
                         <div className="col" key={recipe.id}>
-                            <Link to={`/recipes/?id=${recipe.id}`}>
-                                <RecipeOverviewCard recipe={recipe}/>
-                            </Link>
+                            <RecipeOverviewCard recipe={recipe}/>
                         </div>
                     )}
                 </div>
