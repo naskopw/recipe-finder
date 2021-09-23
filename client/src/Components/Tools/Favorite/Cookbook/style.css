@@ -1,4 +1,7 @@
-#page-cookbook > .container
-{
-    margin-top:40px;
+#page-cookbook > .container {
+    margin-top: 40px;
+}
+
+#page-cookbook-edit > .container {
+    margin-bottom: 20px;
 }

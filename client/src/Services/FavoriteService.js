@@ -8,6 +8,12 @@ export class FavoriteService {
         return response.data
     }
 
+    static async delete(cookbookId) {
+        const API_URL = `${process.env.REACT_APP_API_BASE_URL}/favorite/${cookbookId}`
+        let response = await axios.delete(API_URL, {headers: authHeader()})
+        return response.data
+    }
+
     static async get(categoryId) {
         const API_URL = `${process.env.REACT_APP_API_BASE_URL}/favorite/${categoryId}`
         let response = await axios.get(API_URL, {headers: authHeader()})

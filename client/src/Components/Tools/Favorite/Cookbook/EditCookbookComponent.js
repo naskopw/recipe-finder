@@ -27,6 +27,12 @@ const EditCookbookComponent = ({match}) => {
         window.location.reload()
     }
 
+    async function onDelete() {
+        await FavoriteService.delete(cookbookId)
+        history.push("/tools/favorite")
+        window.location.reload()
+    }
+
     return (
         <div id={"page-cookbook-edit"}>
             <Nav/>
@@ -35,6 +41,12 @@ const EditCookbookComponent = ({match}) => {
                 <hr/>
             </div>
             <div className="container text-center">
+                <button className="btn-rf-primary"
+                        onClick={() => onDelete()}>Delete cookbook
+                </button>
+            </div>
+            <div className="container text-center">
+
                 <form className="input-form">
                     <p>Title</p>
                     <input type="text"
