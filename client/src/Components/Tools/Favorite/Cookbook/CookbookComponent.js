@@ -3,15 +3,15 @@ import "./style.css"
 import {FavoriteService} from "../../../../Services/FavoriteService";
 import Nav from "../../../NavLogged/Nav";
 import RecipeOverviewCard from "../../../Cards/RecipeOverview/RecipeOverviewCard";
+import {Link} from "react-router-dom";
 
 const CookbookComponent = ({match}) => {
-    const categoryId = parseInt(match.params.id);
+    const cookbookId = parseInt(match.params.id);
 
-    const [category, setCategory] = useState([])
+    const [cookbook, setCookbook] = useState([])
 
     async function fetchData() {
-        let category = await FavoriteService.get(categoryId)
-        setCategory(category)
+        setCookbook(await FavoriteService.get(cookbookId))
     }
 
     useEffect(() => {
@@ -19,28 +19,44 @@ const CookbookComponent = ({match}) => {
     }, [])
 
     async function removeFav(recipeId) {
-        await FavoriteService.removeRecipe(categoryId, recipeId)
+        await FavoriteService.removeRecipe(cookbookId, recipeId)
         await fetchData()
 
+    }
+
+    function renderCookbook() {
+        if (cookbook.recipes !== undefined && cookbook.recipes.length > 0) {
+            return (
+                cookbook.recipes.map(recipe => {
+                    return (
+                        <div className="col" key={recipe.id}>
+                            <button className="btn-rf-primary"
+                                    onClick={() => removeFav(recipe.id)}>X
+                            </button>
+                            <RecipeOverviewCard recipe={recipe}/>
+                        </div>
+                    )
+                }))
+        } else {
+            return <h1>No recipes added yet</h1>
+        }
     }
 
     return (
         <div id={"page-cookbook"}>
             <Nav/>
-            <div className="container">
+            <div className={"rf-header text-center"}>
+                <h2>{cookbook.title}</h2>
+                <hr/>
+            </div>
+            <div className="container text-center">
+                <Link className="btn-rf-secondary"
+                      to={"/cookbook/edit/" + cookbookId}
+                >Edit cookbook</Link>
+            </div>
+            <div className="container text-center">
                 <div className="row">
-                    {category.recipes &&
-                    category.recipes.map(recipe => {
-                        return (
-                            <div className="col" key={recipe.id}>
-                                <button className="btn-rf-primary"
-                                        onClick={() => removeFav(recipe.id)}>X
-                                </button>
-                                <RecipeOverviewCard recipe={recipe}/>
-                            </div>
-                        )
-                    })
-                    }
+                    {renderCookbook()}
                 </div>
             </div>
         </div>

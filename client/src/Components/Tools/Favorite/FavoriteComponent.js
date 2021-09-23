@@ -9,18 +9,20 @@ const FavoriteComponent = () => {
 
     const [categories, setCategories] = useState([])
 
+
+    async function fetchData() {
+        let categories = await FavoriteService.getAll()
+        setCategories(categories.reverse())
+    }
+
     useEffect(() => {
-        async function fetchData() {
-            let categories = await FavoriteService.getAll()
-            setCategories(categories)
-        }
 
         fetchData()
     }, [])
 
-    async function onCreateClick() {
-        let data = await FavoriteService.getAll()
-        setCategories(data)
+    async function onCreateClick(title) {
+        await FavoriteService.createCookbook(title)
+        await fetchData()
     }
 
     return (
@@ -36,26 +38,28 @@ const FavoriteComponent = () => {
                     </p>
                 </header>
                 <div className="cookbook-add-container">
-                    <input type="text" placeholder="My Cookbook"/>
+                    <input id="input-create-cookbook" type="text" placeholder="My Cookbook"/>
                     <button className="btn-rf-primary"
-                            onClick={() => onCreateClick()}>Create cookbook
+                            onClick={() => onCreateClick(
+                                document.getElementById("input-create-cookbook").value
+                            )}>Create cookbook
                     </button>
                 </div>
                 <div className="container text-center">
 
                     <div className={"row"}>
                         {
-                            categories.map((category, index) => {
+                            categories.map((cookbook, index) => {
                                 return (
                                     <div className={"col"}>
-                                        <Link to={"/cookbook/" + category.id}
+                                        <Link to={"/cookbook/" + cookbook.id}
                                               key={index}
                                         ><CategoryOverviewCard category={{
-                                            ...category,
-                                            name: category.title
+                                            ...cookbook,
+                                            name: cookbook.title
                                         }}
                                         />
-                                        </Link>)
+                                        </Link>
                                     </div>
                                 )
                             })

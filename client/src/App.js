@@ -15,6 +15,7 @@ import PlanRecipeComponent from "./Components/Tools/Calendar/PlanRecipe/PlanReci
 import FavoriteComponent from "./Components/Tools/Favorite/FavoriteComponent";
 import CookbookComponent from "./Components/Tools/Favorite/Cookbook/CookbookComponent";
 import AddFavoriteComponent from "./Components/Tools/Favorite/AddToFavorite/AddFavoriteComponent";
+import EditCookbookComponent from "./Components/Tools/Favorite/Cookbook/EditCookbookComponent";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                     <PrivateRoute path="/recipes/plan/:id" component={PlanRecipeComponent}/>
                     <PrivateRoute path="/recipes/fav/:id" component={AddFavoriteComponent}/>
                     <Route path="/recipes"><RecipeDetails/></Route>
+                    <PrivateRoute path="/cookbook/edit/:id" component={EditCookbookComponent}/>
                     <PrivateRoute path="/cookbook/:id" component={CookbookComponent}/>
                     <Route path="/categories/:id" component={CategoryDetails}/>
                     <Route path="/categories" component={Search}/>
