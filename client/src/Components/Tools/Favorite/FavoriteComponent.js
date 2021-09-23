@@ -1,10 +1,29 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Nav from "../../NavLogged/Nav";
 import "./style.css"
 import {Link} from "react-router-dom";
 import CategoryOverviewCard from "../../Cards/CategoryOverview/CategoryOverviewCard";
+import {FavoriteService} from "../../../Services/FavoriteService";
+import {getCategory} from "../../../Services/CategoryService";
 
 const FavoriteComponent = () => {
+
+    const [categories, setCategories] = useState([])
+
+    useEffect(() => {
+        async function fetchData() {
+            let categories = await FavoriteService.getAll()
+            setCategories(categories)
+        }
+
+        fetchData()
+    }, [])
+
+    async function onCreateClick() {
+        let data = await FavoriteService.getAll()
+        setCategories(data)
+    }
+
     return (
         <div id="page-favorites">
             <Nav/>
@@ -19,20 +38,29 @@ const FavoriteComponent = () => {
                 </header>
                 <div className="cookbook-add-container">
                     <input type="text" placeholder="My Cookbook"/>
-                    <Link to="#" className="btn-rf-primary">Create cookbook</Link>
+                    <button className="btn-rf-primary"
+                            onClick={() => onCreateClick()}>Create cookbook
+                    </button>
                 </div>
                 <div className="container text-center">
 
                     <div className={"row"}>
-                        <div className={"col"}>
-                            <Link to="#"><CategoryOverviewCard/></Link>
-                        </div>
-                        <div className={"col"}>
-                            <Link to="#"><CategoryOverviewCard/></Link>
-                        </div>
-                        <div className={"col"}>
-                            <Link to="#"><CategoryOverviewCard/></Link>
-                        </div>
+                        {
+                            categories.map((category, index) => {
+                                return (
+                                    <div className={"col"}>
+                                        <Link to="#"
+                                              key={index}
+                                        ><CategoryOverviewCard category={{
+                                            ...category,
+                                            name: category.title
+                                        }}
+                                        />
+                                        </Link>)
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </section>
