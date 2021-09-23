@@ -52,4 +52,20 @@ public class FavoriteController {
                 user.getId());
         return ResponseEntity.ok().body("Successful");
     }
+
+    @PostMapping("/{id}/recipe/{recipeId}")
+    public ResponseEntity<String> addRecipe(@AuthenticationPrincipal UserDetailsImpl user,
+                                            @PathVariable Long id,
+                                            @PathVariable Long recipeId) {
+        favoriteService.addRecipe(recipeId, id, user.getId());
+        return ResponseEntity.ok().body("Successful");
+    }
+
+    @DeleteMapping("/{id}/recipe/{recipeId}")
+    public ResponseEntity<String> deleteRecipe(@AuthenticationPrincipal UserDetailsImpl user,
+                                               @PathVariable Long id,
+                                               @PathVariable Long recipeId) {
+        favoriteService.deleteRecipe(recipeId, id, user.getId());
+        return ResponseEntity.ok().body("Successful");
+    }
 }

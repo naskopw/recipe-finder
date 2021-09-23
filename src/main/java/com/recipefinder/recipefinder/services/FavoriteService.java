@@ -5,6 +5,7 @@ import com.recipefinder.recipefinder.dto.models.CookbookDto;
 import com.recipefinder.recipefinder.models.Cookbook;
 import com.recipefinder.recipefinder.models.requests.CookbookCreateRequest;
 import com.recipefinder.recipefinder.repository.CookbookRepository;
+import com.recipefinder.recipefinder.repository.RecipeRepository;
 import com.recipefinder.recipefinder.repository.authentication.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,10 +17,12 @@ import java.util.stream.Collectors;
 public class FavoriteService {
     private final CookbookRepository cookbookRepository;
     private final UserRepository userRepository;
+    private final RecipeRepository recipeRepository;
 
-    public FavoriteService(CookbookRepository cookbookRepository, UserRepository userRepository) {
+    public FavoriteService(CookbookRepository cookbookRepository, UserRepository userRepository, RecipeRepository recipeRepository) {
         this.cookbookRepository = cookbookRepository;
         this.userRepository = userRepository;
+        this.recipeRepository = recipeRepository;
     }
 
     public List<CookbookDto> getCookbooks(Long userId) {
@@ -63,9 +66,34 @@ public class FavoriteService {
             if (cookbook.getUser().getId().equals(userId))
                 cookbookRepository.delete(cookbook);
         } catch (IndexOutOfBoundsException ignored) {
-
         }
     }
 
+    public void addRecipe(Long recipeId, Long cookbookId, Long userId) {
+        var cookbook = findCookbook(cookbookId, userId);
+        var recipe = recipeRepository.findById(recipeId);
+        assert cookbook != null;
+        if (recipe.isPresent() && !cookbook.getRecipes().contains(recipe.get())) {
+            cookbook.getRecipes().add(recipe.get());
+            cookbookRepository.save(cookbook);
+        }
+    }
+
+    public void deleteRecipe(Long recipeId, Long cookbookId, Long userId) {
+        var cookbook = findCookbook(cookbookId, userId);
+        var recipe = recipeRepository.findById(recipeId);
+        if (recipe.isPresent()) {
+            assert cookbook != null;
+            cookbook.getRecipes().remove(recipe.get());
+            cookbookRepository.save(cookbook);
+        }
+    }
+
+
+    private Cookbook findCookbook(Long id, Long userId) {
+        var cookbooks = cookbookRepository.findByUserId(userId).stream()
+                .filter(c -> c.getId().equals(id)).collect(Collectors.toList());
+        return cookbooks.size() > 0 ? cookbooks.get(0) : null;
+    }
 
 }
