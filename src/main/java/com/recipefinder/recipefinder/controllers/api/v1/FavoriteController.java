@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @CrossOrigin
 @RestController
@@ -22,9 +23,21 @@ public class FavoriteController {
     @Autowired
     private final FavoriteService favoriteService;
 
+    @GetMapping("/{id}")
+    public ResponseEntity<CookbookDto> getItems(@AuthenticationPrincipal UserDetailsImpl user,
+                                                @PathVariable Long id) {
+        var categories = favoriteService.getCookbooks(user.getId())
+                .stream().filter(c -> c.getId().equals(id)).collect(Collectors.toList());
+        if (categories.size() > 0) {
+
+            return ResponseEntity.ok().body(categories.get(0));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @GetMapping("/")
     public ResponseEntity<List<CookbookDto>> getItems(@AuthenticationPrincipal UserDetailsImpl user) {
-
         return ResponseEntity.ok().body(favoriteService.getCookbooks(user.getId()));
     }
 
