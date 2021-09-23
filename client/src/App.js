@@ -13,6 +13,7 @@ import LogoutComponent from "./Components/Authentication/LogoutComponent";
 import CalendarComponent from "./Components/Tools/Calendar/CalendarComponent";
 import PlanRecipeComponent from "./Components/Tools/Calendar/PlanRecipe/PlanRecipeComponent";
 import FavoriteComponent from "./Components/Tools/Favorite/FavoriteComponent";
+import CookbookComponent from "./Components/Tools/Favorite/Cookbook/CookbookComponent";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                 <Switch>
                     <PrivateRoute path="/recipes/fav/:id" component={PlanRecipeComponent}/>
                     <Route path="/recipes"><RecipeDetails/></Route>
+                    <Route path="/cookbook/:id" component={CookbookComponent}/>
                     <Route path="/categories/:id" component={CategoryDetails}/>
                     <Route path="/categories" component={Search}/>
                     <Route path="/register" component={Register}/>

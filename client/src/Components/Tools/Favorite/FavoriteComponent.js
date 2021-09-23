@@ -49,7 +49,7 @@ const FavoriteComponent = () => {
                             categories.map((category, index) => {
                                 return (
                                     <div className={"col"}>
-                                        <Link to="#"
+                                        <Link to={"/cookbook/" + category.id}
                                               key={index}
                                         ><CategoryOverviewCard category={{
                                             ...category,
