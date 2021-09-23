@@ -2,6 +2,7 @@ package com.recipefinder.recipefinder.controllers.api.v1;
 
 import com.recipefinder.recipefinder.dto.models.CookbookDto;
 import com.recipefinder.recipefinder.models.Cookbook;
+import com.recipefinder.recipefinder.models.requests.CookbookCreateRequest;
 import com.recipefinder.recipefinder.security.services.UserDetailsImpl;
 import com.recipefinder.recipefinder.services.FavoriteService;
 import lombok.RequiredArgsConstructor;
@@ -37,12 +38,18 @@ public class FavoriteController {
     @PutMapping("/{id}")
     public ResponseEntity<String> editItem(@AuthenticationPrincipal UserDetailsImpl user,
                                            @PathVariable Long id,
-                                           @RequestBody Map<String, String> args) {
+                                           @RequestBody CookbookCreateRequest request) {
         favoriteService.updateCookbook(id,
-                args.get("title"),
-                args.get("image"),
+                request,
                 user.getId());
         return ResponseEntity.ok().body("Successful");
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteItem(@AuthenticationPrincipal UserDetailsImpl user,
+                                             @PathVariable Long id) {
+        favoriteService.deleteCookbook(id,
+                user.getId());
+        return ResponseEntity.ok().body("Successful");
+    }
 }

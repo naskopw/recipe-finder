@@ -3,6 +3,7 @@ package com.recipefinder.recipefinder.services;
 import com.recipefinder.recipefinder.dto.mappers.CookbookMapper;
 import com.recipefinder.recipefinder.dto.models.CookbookDto;
 import com.recipefinder.recipefinder.models.Cookbook;
+import com.recipefinder.recipefinder.models.requests.CookbookCreateRequest;
 import com.recipefinder.recipefinder.repository.CookbookRepository;
 import com.recipefinder.recipefinder.repository.authentication.UserRepository;
 import org.springframework.stereotype.Service;
@@ -28,19 +29,19 @@ public class FavoriteService {
 
     }
 
-    public void updateCookbook(Long id, String title, String image, Long userId) {
+    public void updateCookbook(Long id, CookbookCreateRequest request, Long userId) {
         var cookbooks = cookbookRepository.findByUserId(userId)
                 .stream().filter(c -> c.getId().equals(id))
                 .collect(Collectors.toList());
         var cookbook = cookbooks.size() > 0 ? cookbooks.get(0) : null;
         if (cookbook != null) {
-            if (!title.isEmpty() && !title.isBlank())
-                cookbook.setTitle(title);
-            if (!image.isEmpty() && !image.isBlank())
-                cookbook.setImage(image);
+            if (!request.getTitle().isEmpty() && !request.getTitle().isBlank())
+                cookbook.setTitle(request.getTitle());
+            if (!request.getImage().isEmpty() && !request.getImage().isBlank())
+                cookbook.setImage(request.getImage());
             cookbookRepository.save(cookbook);
         } else {
-            createCookbook(title, userId, id, image);
+            createCookbook(request.getTitle(), userId, id, request.getImage());
         }
     }
 
@@ -53,5 +54,18 @@ public class FavoriteService {
         var cookbook = new Cookbook(id, title, image, user, new ArrayList<>());
         cookbookRepository.save(cookbook);
     }
+
+    public void deleteCookbook(Long id, Long userId) {
+        try {
+            var cookbook = cookbookRepository.findByUserId(userId)
+                    .stream().filter(c -> c.getId().equals(id))
+                    .collect(Collectors.toList()).get(0);
+            if (cookbook.getUser().getId().equals(userId))
+                cookbookRepository.delete(cookbook);
+        } catch (IndexOutOfBoundsException ignored) {
+
+        }
+    }
+
 
 }
