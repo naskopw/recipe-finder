@@ -3,8 +3,8 @@
     box-shadow: inset 0 0 0 100vh rgba(0, 0, 0, 0.8);
 }
 
-#page-favorites {
-    background-color: rgb(246, 246, 246);
+#page-favorites > #section-favorites {
+    background-color: #ffffff;
 }
 
 #page-favorites > #section-favorites > .container {
