@@ -1,6 +1,7 @@
 import axios from "axios";
+import ConfigService from "./ConfigService"
 
-const API_URL = `${process.env.REACT_APP_API_BASE_URL}/auth/`;
+const API_URL = `${ConfigService.getBaseURL()}/auth/`;
 
 class AuthService {
     async login(username, password) {
