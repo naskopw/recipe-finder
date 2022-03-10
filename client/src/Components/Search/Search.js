@@ -1,8 +1,8 @@
-import {React, useEffect, useState} from 'react'
-import {Link} from "react-router-dom"
+import { React, useEffect, useState } from 'react'
+import { Link } from "react-router-dom"
 import Nav from '../NavMain/Nav'
 import './style.css'
-import {getCategoryByStart} from "../../Services/CategoryService"
+import { getCategoryByStart } from "../../Services/CategoryService"
 import CategoryOverviewCard from "../Cards/CategoryOverview/CategoryOverviewCard";
 
 export const Search = () => {
@@ -20,10 +20,10 @@ export const Search = () => {
 
     return (
         <div id="search">
-            <Nav/>
+            <Nav />
             <div className="rf-header text-center">
                 <h2>Recipes starting with</h2>
-                <hr/>
+                <hr />
                 <h2>{startsWith.toUpperCase()}</h2>
             </div>
             <div className="container text-center">
@@ -31,12 +31,12 @@ export const Search = () => {
                     {
                         "abcdefghijklmnopqrstuvwxyz".split("").map(letter =>
                             <Link key={letter}
-                                  className={activeFilter === letter ? "btn-rf-primary" : "btn-rf-secondary"}
-                                  onClick={() => {
-                                      setActiveFilter(letter)
-                                      setStartsWith(letter)
-                                  }}
-                                  to={`/categories?startsWith=${letter.toUpperCase()}`}
+                                className={activeFilter === letter ? "btn-rf-primary" : "btn-rf-secondary"}
+                                onClick={() => {
+                                    setActiveFilter(letter)
+                                    setStartsWith(letter)
+                                }}
+                                to={`/categories?startsWith=${letter.toUpperCase()}`}
                             >
                                 {letter.toUpperCase()}
                             </Link>
@@ -44,27 +44,28 @@ export const Search = () => {
                 </div>
                 <div className="row">
                     <input type="search"
-                           className="form-control"
-                           id="searchKeywordForm"
-                           onChange={(e) => {
-                               setStartsWith(e.target.value)
-                           }}
-                           placeholder="Search by keyword"/>
+                        className="form-control"
+                        id="searchKeywordForm"
+                        onChange={(e) => {
+                            setStartsWith(e.target.value)
+                        }}
+                        placeholder="Search by keyword" />
                 </div>
             </div>
             {categories &&
-            <div className="container">
-                <div className="row">
-                    {categories.map(category =>
-                        <div className="col">
-                            <Link
-                                key={category.id} to={`/categories/${category.id}`}>
-                                <CategoryOverviewCard category={category}/>
-                            </Link>
-                        </div>
-                    )}
+                <div className="container">
+                    <div className="row">
+                        {categories.map(category =>
+                            <div className="col"
+                                key={category.id}>
+                                <Link
+                                    key={category.id} to={`/categories/${category.id}`}>
+                                    <CategoryOverviewCard category={category} />
+                                </Link>
+                            </div>
+                        )}
+                    </div>
                 </div>
-            </div>
             }
         </div>
     )
