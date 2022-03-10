@@ -1,10 +1,10 @@
 version: "3.9"
 
-services: 
+services:
     db:
         image: mysql:8.0.26
         volumes:
-            - db_data:/var/lib/mysql    
+            - db_data:/var/lib/mysql
         restart: always
         environment:
             MYSQL_USER: root
@@ -12,13 +12,13 @@ services:
             MYSQL_DATABASE: recipe-finder
         ports:
             - 3306:3306
-    recipe-finder-front-end:
+    front-end:
         container_name: front-end
         build: ./client
         ports:
             - 3000:3000
-    
-    recipe-finder-back-end:
+
+    back-end:
         container_name: back-end
         build: ./
         ports:
