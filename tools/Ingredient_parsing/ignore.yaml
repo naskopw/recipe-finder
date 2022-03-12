@@ -1,0 +1,299 @@
+--- 
+KitchenMetricsRegularPlural: 
+  - tablespoon
+  - teaspoon
+  - cup
+  - can
+  - bag
+  - container
+  - pound
+  - package
+  - slice
+  - cube
+  - ounce
+  - chunk
+  - head
+  - piece
+  - clove
+  - pot
+  - wedge
+  - jar
+  - bottle
+  - packet
+  - scoop
+  - sheet
+  - drop
+KitchenMetricsIrregularPlural:
+  - pinch
+  - pinches
+  - half
+  - halves
+  - dash
+  - dashes
+  - half-and-half
+  - inch
+  - inches
+  - bunch
+  - 1/2-inch
+  - 2-inch
+  - 1/4-inch
+  - 1-inch
+  - 3/4-inch
+
+Fractions:
+  - ½
+  - ⅓
+  - ¼
+  - ⅛
+  - ¾
+  - ⅜
+  - ⅔
+  - 1/4
+  - 1/2
+  - 1/3
+
+Conjunctions:
+  - or
+  - and
+  - more
+  - into
+  - for
+  - in
+  - of
+
+NounsAndArticles:
+  - matchsticks
+  - their
+  - any
+  - color
+  - stalks
+  - ribbons
+  - deep-frying
+  - seasoning
+  - tips
+  - fat
+  - loaf
+  - topping
+  - strips
+  - flakes
+  - crescent
+  - mix
+  - left
+  - other
+  - splash
+  - tails
+  - threads
+  - granules
+  - fillets
+  - frying
+  - several
+  - slivers
+  - plus
+  - extra
+  - hash
+
+Patterns:
+  - as desired
+  - as needed
+  - if desired
+  - to taste
+  - extra virgin
+  - white green parts only
+  - in medium dice
+  - set aside
+  - such as
+  - of round roast
+  - long grain
+  - liquid reserved
+  - if necessary
+  - with liquid
+  - with skin
+  - with juice
+  - dark meat
+  - rack of
+  - leaves
+  
+Trademarks:
+  - ®
+  - ™
+
+Irrelevant:
+  - water
+  - ice
+
+AdjectivesAndAdverbs:
+  - dried
+  - shredded
+  - thawed
+  - chopped
+  - cubed
+  - juiced
+  - diced
+  - beaten
+  - seasoned
+  - divided
+  - sliced
+  - large
+  - small
+  - warm
+  - chilled
+  - peeled
+  - cored
+  - very
+  - drained
+  - fresh
+  - cooked
+  - minced
+  - evaporated
+  - pre-cooked
+  - packed
+  - torn
+  - toasted
+  - crushed
+  - grated
+  - salted
+  - unsalted
+  - coarsely
+  - cut
+  - thick
+  - frozen
+  - lightly
+  - crumbled
+  - peeled
+  - thick-cut
+  - finely
+  - ice-cold
+  - quick
+  - new
+  - halved
+  - softened
+  - plain
+  - seeded
+  - mashed
+  - light
+  - quick-cooking
+  - smoked
+  - refrigerated
+  - rinsed
+  - no-salt-added
+  - cold
+  - segmented
+  - day-old
+  - hard-boiled
+  - lengthwise
+  - skinless
+  - boneless
+  - fresh-ground
+  - sun-dried
+  - low-sodium
+  - cut
+  - part-skim
+  - skim
+  - freshly
+  - marinated
+  - quartered
+  - dry
+  - slightly
+  - whole-milk
+  - solid
+  - medium
+  - fully
+  - thin
+  - prepared
+  - Dijon-style
+  - buttered
+  - corkscrew-shaped
+  - uncooked
+  - fat-free
+  - thinly
+  - stemmed
+  - trimmed
+  - pitted
+  - thin-sliced
+  - removed
+  - processed
+  - reduced-fat
+  - diagonally
+  - oven-safe
+  - pre-baked
+  - hot
+  - pounded
+  - roughly
+  - condensed
+  - extra-lean
+  - dressed
+  - undrained
+  - whole
+  - reduced-sodium
+  - stale
+  - Italian
+  - Italian-seasoned
+  - Italian-style
+  - wild
+  - long-grain
+  - all-purpose
+  - mixed
+  - ground
+  - separated
+  - melted
+  - Spanish
+  - French
+  - Irish
+  - Marsala
+  - flat
+  - fine
+  - distilled
+  - Korean-style
+  - short
+  - lower-sodium
+  - bite-sized
+  - bite-size
+  - extra-sharp
+  - unbaked
+  - baked
+  - instant
+  - extra-virgin
+  - soaked
+  - leftover
+  - corned
+  - scrubbed
+  - frenched
+  - cleaned
+  - unpeeled
+  - zested
+  - canned
+  - deveined
+  - julienned
+  - discarded
+  - stewed
+  - squeezed
+  - washed
+  - dissolved
+  - warmed
+  - sweetened
+  - refried
+  - bone-in
+  - flat-leaf
+  - Jamaican-style
+  - short-grain
+  - first-cut
+  - Mexican-style
+  - low-fat
+  - skin-on
+  - then
+  - about
+  - live
+  - thickly
+  - wide
+  - homemade
+  - unsweetened
+  - freshly-ground
+  - high-quality
+  - chocolate-flavored
+  - old-fashioned
+  - sifted
+  - confectioners'
+  - roasted
+  - extra-light
+  - husked
+  - lager-style
